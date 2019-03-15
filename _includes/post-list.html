@@ -1,0 +1,14 @@
+<div class="row justify-content-center justify-content-md-start">
+    {% for post in site.posts %}
+        <div class="col-10 col-md-6 col-lg-4 mb-4">
+            <div class="card post text-white bg-dark border-info">
+                <img src="images/1.jpg" alt="" class="card-img-top post-thumb">
+                <div class="card-body">
+                    <h5 class="card-title">{{post.title}}</h5>
+                    <p>{{post.excerpt}}...</p>
+                    <p class="card-text"><a href="{{post.url}}">Xem thêm</a></p>
+                </div>
+            </div>
+        </div>  
+    {% endfor %}
+</div>
