@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<header class="container-fluid">
+    <h1 class="display-2 text-light">q5ca's world</h1>
+</header>
+<div class="pt-5 pb-5 text-center parallax">
+    <h2 class="text-info display-4">{{page.title}}</h1>
+</div>
+<style>
+    header{
+        height: 25rem;
+        max-height: 60vh;
+        background-image: url('/assets/images/header1.gif');
+        background-size: cover;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        border-bottom: 2px solid red;
+        position: relative;
+    }
+    h1{
+        position: absolute;
+        top: 50%; left:50%; 
+        transform: translate(-50%, -50%);
+    }
+    .parallax{
+        background-image: url("/assets/images/parallax0.jpg");
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+<div class="container" style="padding-top:69px; padding-bottom: 60px;"id="content">
+    {{content}}
+</div>

@@ -1,19 +1,28 @@
 ---
-layout: default
+layout: page
 title: H0m3
 colorTheme: "#0c0d0e"
 cssFile: "index"
+description: "Q5Ca's world (just another sec blog <3) CTF CVE hach hack"
 ---
 
+<div class="row justify-content-center justify-content-md-start">
+    {% for post in site.posts %}
+        <div class="col-10 col-md-6 col-lg-4 mb-4">
+            <div class="card post text-white bg-dark border-info">
+                {% if post.postThumb %}
+                    {% capture pT %}/assets/images/{{ post.postThumb }}{% endcapture %}
+                {% endif %}
+                <img src="{{ pT | relative_url}}" alt="" class="card-img-top post-thumb">
+                <div class="card-body">
+                    <h5 class="card-title">{{post.title}}</h5>
+                    <p>{{post.excerpt}}...</p>
+                    <p class="card-text"><a href="{{post.url}}">Xem thêm</a></p>
+                </div>
+            </div>
+        </div>  
+    {% endfor %}
+</div>
 
-<header class="container-fluid">
-    <h1 class="display-2 text-light">q5ca's world</h1>
-</header>
-<div class="pt-5 pb-5 text-center parallax">
-    <h2 class="text-info display-4">H0m3</h1>
-</div>
-<div class="container" style="padding-top:69px; padding-bottom: 60px;">
-    {% include post-list.html %}
-</div>
 
 

@@ -1,5 +1,25 @@
 <!DOCTYPE html>
-<html lang="vi"></html>
+<!--
+     QQQQQQQQQ     555555555555555555         CCCCCCCCCCCCC                  
+   QQ:::::::::QQ   5::::::::::::::::5      CCC::::::::::::C                  
+ QQ:::::::::::::QQ 5::::::::::::::::5    CC:::::::::::::::C                  
+Q:::::::QQQ:::::::Q5:::::555555555555   C:::::CCCCCCCC::::C                  
+Q::::::O   Q::::::Q5:::::5             C:::::C       CCCCCC  aaaaaaaaaaaaa   
+Q:::::O     Q:::::Q5:::::5            C:::::C                a::::::::::::a  
+Q:::::O     Q:::::Q5:::::5555555555   C:::::C                aaaaaaaaa:::::a 
+Q:::::O     Q:::::Q5:::::::::::::::5  C:::::C                         a::::a 
+Q:::::O     Q:::::Q555555555555:::::5 C:::::C                  aaaaaaa:::::a 
+Q:::::O     Q:::::Q            5:::::5C:::::C                aa::::::::::::a 
+Q:::::O  QQQQ:::::Q            5:::::5C:::::C               a::::aaaa::::::a 
+Q::::::O Q::::::::Q5555555     5:::::5 C:::::C       CCCCCCa::::a    a:::::a 
+Q:::::::QQ::::::::Q5::::::55555::::::5  C:::::CCCCCCCC::::Ca::::a    a:::::a 
+ QQ::::::::::::::Q  55:::::::::::::55    CC:::::::::::::::Ca:::::aaaa::::::a 
+   QQ:::::::::::Q     55:::::::::55        CCC::::::::::::C a::::::::::aa:::a
+     QQQQQQQQ::::QQ     555555555             CCCCCCCCCCCCC  aaaaaaaaaa  aaaa
+             Q:::::Q                                                         
+              QQQQQQ                                                                                                               
+-->                                                                          
+<html lang="vi">
     <head>
         {% if site.environment == "production" %}
             {% include google-analytics.html %}
@@ -15,7 +35,7 @@
         <link rel="stylesheet" href="{{ "/assets/css/highlighter.css" | relative_url }}">
     </head>
     </head>
-    <body>
+    <body style="padding-top: 56.94px; word-wrap:break-word;">
         {% include navigation.html colorTheme=page.colorTheme%}
         {{content}}
         {% include footer.html colorTheme=page.colorTheme%}
