@@ -10,12 +10,15 @@ To add new posts, simply add a file in the `_posts` directory that follows the c
 
 Jekyll also offers powerful support for code snippets:
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
+{% highlight scala linenos %}
+  def findNums(n: Int): Iterable[(Int, Int)] = {
+
+    // a for comprehension using two generators
+    for (i <- 1 until n;
+         j <- 1 until (i-1);
+         if isPrime(i + j)) yield (i, j)
+  }
+
 {% endhighlight %}
 
 Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
