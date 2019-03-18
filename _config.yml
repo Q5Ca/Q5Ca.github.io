@@ -3,8 +3,8 @@
 title: "q5ca's world"
 description: >- # this means to ignore newlines until "baseurl:"
   q5ca's world CTF CVE q5ca q5ca q5ca q5ca q5ca q5ca q5ca
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "https://q5ca.pw" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 markdown: kramdown
