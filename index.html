@@ -12,12 +12,24 @@ description: "Q5Ca's world (just another sec blog <3) CTF CVE hach hack"
             <div class="card post text-white bg-dark border-info">
                 {% if post.postThumb %}
                     {% capture pT %}/assets/images/{{ post.postThumb }}{% endcapture %}
+                    <img src="{{ pT | relative_url}}" alt="" class="card-img-top post-thumb">
                 {% endif %}
-                <img src="{{ pT | relative_url}}" alt="" class="card-img-top post-thumb">
-                <div class="card-body">
+                <div class="card-body d-flex flex-column">
                     <h5 class="card-title">{{post.title}}</h5>
-                    <p>{{post.excerpt}}...</p>
-                    <p class="card-text"><a href="{{post.url}}">Xem thêm</a></p>
+                    <p>{{post.excerpt}}...
+                        {% for tag in post.tags %}
+                            <a href="#">#{{ tag }} </a>
+                        {% endfor %}
+                    </p>
+                    <small class="font-italic">Categories: 
+                        {% for category in post.categories %}
+                            <a href="#">{{ category }}</a>
+                        {% endfor %}
+                    </small>
+                    <div class="mt-auto d-flex justify-content-between">
+                        <small>{{ post.date | date_to_string }}</small>
+                        <a href="{{post.url}}">Đọc tiếp &gt;&gt;</a>
+                    </div>
                 </div>
             </div>
         </div>  
