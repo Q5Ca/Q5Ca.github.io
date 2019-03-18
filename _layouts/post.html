@@ -27,6 +27,8 @@ layout: default
 <div id="content">
     {{ content }}
 </div>
-{% if post.comments %}
+{% if page.comments %}
+    <div class="container">
     {% include disqus.html %}
+    </div>
 {% endif %}
