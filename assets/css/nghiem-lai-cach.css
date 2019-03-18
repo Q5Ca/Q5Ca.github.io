@@ -3,17 +3,7 @@
     font-size: 1.5rem;
     line-height: 1.8;
 }
-header {
-    width:100%;
-    height:400px;
-    background-image: url('../images/header4.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-bottom: 3px solid #fbb258;
-    margin-bottom: 40px;
-    padding-top: 65px;
-}
+
 .navbar{
     border-bottom: 3px solid #dc3545;
 }
