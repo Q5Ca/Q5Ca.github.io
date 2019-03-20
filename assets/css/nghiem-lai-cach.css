@@ -5,7 +5,6 @@ header{
     border-bottom: 3px solid #fbb258;
     padding-top: 65px;
 }
-h1{
-    color: #dc3545!important;
+header h1{
+    color: #dc3545;
 }
-
