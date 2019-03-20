@@ -2,8 +2,9 @@
 layout: default
 ---
 <link rel="stylesheet" href="{{ "/assets/css/page.css" | relative_url }}">
-{% include header.html hd-i=page.page-header-image hd-t="q5ca's world" hd-hc=page.color-h1 %}
-<script>$("header h1").addClass("display-2");</script>
+<header class="container-fluid" style="background-image: url('/assets/images/{{page.page-header-image}}');">
+    <h1 class="display-2">q5ca's world</h1>
+</header>
 <div class="pt-5 pb-5 parallax" style="background-image: url('/assets/images/parallax0.jpg');">
     <h2 class="text-center text-info display-4">{{page.title}}</h2>
 </div>

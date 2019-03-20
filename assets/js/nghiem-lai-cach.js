@@ -1,0 +1,1 @@
+$("header").html('<div class="row"> <div class="col-lg-1"></div><div class="col-lg-6"><h1 class="text-center display-4 ">Nghiệm lại cách biểu diễn số thực trong máy tính</h1></div><div class="col-lg-4"></div></div>');

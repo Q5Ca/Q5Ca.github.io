@@ -2,8 +2,9 @@
 layout: default
 ---
 <link rel="stylesheet" href="{{ "/assets/css/post.css" | relative_url }}">
-{% include header.html hd-i=page.post-thumb hd-t=page.title hd-hc=page.color-h1 %}
-<script>$("header h1").addClass("display-4");</script>
+<header class="container-fluid" style="background-image: url('/assets/images/{{page.post-thumb}}');">
+    <h1 class="display-4">{{page.title}}</h1>
+</header>
 <div id="content-wrapper">
     <div class="container" id="content">
         {{ content }}
@@ -16,11 +17,5 @@ layout: default
     </div>
 </div>
 {% endif %}
-<script>
-    $(document).ready(function(){
-        $("#content img").addClass("mx-auto d-block img-fluid mb-3");
-        $('img').each(function(i){
-            this.alt = encodeURI(this.src.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;') );
-            });
-    });
-</script>
+
+
