@@ -1,0 +1,21 @@
+body{
+    padding-top: 56.94px; 
+    word-wrap:break-word;
+}
+/* header */
+header{
+    height: 25rem;
+    max-height: 60vh;
+    background-size: cover;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    position: relative;
+}
+header h1{
+    font-weight: bold; 
+    font-family: 'Roboto Slab', serif;
+
+}
+footer{
+    font-size: 1.2rem;
+}

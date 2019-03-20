@@ -1,11 +1,9 @@
-body{
-    background-color: #423e3e;
+header{
+    border-bottom: 2px solid red;
 }
-.post{
-    min-height: 30rem;
-}
-.post-thumb{
-    object-fit: cover;
-    object-position: 0 0;
-    max-height: 15rem;
+header h1{
+    position: absolute;
+    top: 50%; left:50%; 
+    transform: translate(-50%, -50%);
+    color: white;
 }

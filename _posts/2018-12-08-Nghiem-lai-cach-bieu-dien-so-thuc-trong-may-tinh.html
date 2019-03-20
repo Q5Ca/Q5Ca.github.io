@@ -4,77 +4,49 @@ title: Nghiệm lại cách biểu diễn số thực trong máy tính
 categories: realworld
 tags: [float, IEEE 754/85, gdb]
 excerpt: Cơ bản thì IEEE 754/85 là cách chuyển số thực dấu thành dãy các bit 0 1 để lưu trong bộ nhớ máy tính
-postThumb: header4.jpg
+post-thumb: post-thumb-1.jpg
 comments: true
-cssFile: "nghiem-lai-cach"
-colorTheme: "#f95a5a"
+css-file: "nghiem-lai-cach"
+color-theme: "#f95a5a"
 ---
 
-<div class="container content-container">
-    <p class="font-weight-bold" style="padding: 0.9rem;border-radius: 15px 50px 30px; border: 3px solid #28a745; ">Sau khi học môn tin đại cương ở trường, tôi được biết về cách biểu diễn số thực theo chuẩn IEEE 754 85. Bạn nào không biết google sẽ ra. Tuy nhiên, tôi chưa được kiểm chứng ứng dụng thực tế của nó bởi  chương trình học ở trường chỉ tập trung vào việc chuyển đổi cách biểu diễn các số trên giấy thôi 😂. Học cái gì cũng vậy, phải biết nó có tính thực tế mới thấy nó hay và bổ ích phải không. Cho nên hôm nay tôi quyết định làm thí nghiệm tí.</p>
-    <p>Cơ bản thì IEEE 754/85 là cách chuyển số thực dấu thành dãy các bit 0 1 để lưu trong bộ nhớ máy tính. Dãy các bit gồm 3 phần sign(1 bit), exponent, mantissa. Tùy vào độ chính xác biểu diễn mà tổng số lượng các bit và số bít của phần exponent và mantissa khác nhau. Link thêm: <a href="https://en.wikipedia.org/wiki/IEEE_754" class="text-information">https://en.wikipedia.org/wiki/IEEE_754</a></p>
-    <p>Ở đây tôi thí nghiệm với độ chính xác là đơn, số thực sẽ được biểu diễn bằng 32 bit: 1 bit sign, 8 bit exponent, 23 bit mantissa.</p>
-    <img src="{{ "/assets/images/1.jpg" | relative_url }}" >
-    <p>Cụ thể cách biểu diễn như thế nào ta đi vào thí nghiệm.</p>
-    <img src="{{ "/assets/images/34.PNG" | relative_url }}" style="width:290px">
-    <p>Tôi chọn giá trị 8.25 để cho đơn giản, sẽ giải thích sau. Dùng gdb reverse ta được.</p>
-    <img src="{{ "/assets/images/35.PNG" | relative_url }}" style="width:550px">
-    <p>fld và fstp là 2 lệnh liên quan đến xử lí số thực trong máy tính. Tôi không đi vào phân tích 2 lệnh này bởi giờ ta chỉ cần tìm xem số 8.25 được lưu ở đâu và lưu là gì thôi cho đơn giản. Ta đã biết biến tt được lưu trong stack, nên chắc chắn [ebp-0x4] chính là vị trí của nó.</p>
-    <p>run qua lệnh fstp ta được giá trị</p>
-    <img src="{{ "/assets/images/36.PNG" | relative_url }}" style="width:650px">
-    <p>check lại</p>
-    <img src="{{ "/assets/images/37.PNG" | relative_url }}" style="width:250px">
-    <p>Okii giờ tiến hành phân tích</p>
-    <img src="{{ "/assets/images/38.PNG" | relative_url }}" style="width:430px">
-    <p>
-        Chuyển ra nhị phân ta có 31 bit có nghĩa là bit dấu ở đầu bằng 0, đây là số dương. 8 bit tiếp theo là exponent chuyển sang hệ 10 là 130, 23 bit còn lại là mantissa ta giữ nguyên.
-    </p>
-    <p>
-        Để chuyển số thực về hệ 10 ta dùng công thức
-    </p>
-    <img src="https://s0.wp.com/latex.php?latex=%28-1%29%5ES%2AM%2A2%5EE&bg=ffffff&fg=222222&s=3"class="mx-auto d-block img-fluid">
-    <p style="margin-top:1rem;">
-        với S là sign, M là số thập phân hệ 2 có phần nguyên là 1 và phần lẻ là mantissa, E là exponent trừ đi 127
-    </p>
-    <img src="https://s0.wp.com/latex.php?latex=%28-1%29%5E0%2A1.00001%2A2%5E3+%3D+1000.01+%5Crightarrow+8.25&bg=ffffff&fg=222222&s=3"class="mx-auto d-block img-fluid">
-    <p style="margin-top:1rem;">
-        Ở đây các bạn cũng nhận ra việc tôi chon 8.25 vì cơ số là 2 nên việc chuyển đổi rất dễ dàng.
-    </p>
-    <p>
-        Giờ ta thử với một trường hợp tổng quát hơn, -12.34 đi.
-    </p>
-    <img src="{{ "/assets/images/39.PNG" | relative_url }}" style="width:450px; margin-bottom: 1.5rem;">
-    <img src="https://s0.wp.com/latex.php?latex=%28-1%29%5E1+%2A+1.10001010111000010100100+%2A+2%5E3+%5Crightarrow+-12.3400001525878906&bg=ffffff&fg=222222&s=3" class="mx-auto d-block img-fluid">
-    <p  style="margin-top:1rem;">
-        Như vậy ta cũng nhận thấy một điều là dùng cách biểu diễn này số thực sẽ có một phần sai số.
-    </p>
-
-</div>
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-2"><p class="text-center text-light font-weight-bold " style="padding-top: 10px; font-size:1.2rem;">Powered by:</p></div>
-            <div class="col-md-4">
-                <div class="list-group">
-                    <a href="https://pages.github.com/" class="list-group-item list-group-item-action list-group-item-warning text-center"target="_blank">GitHub Pages</a>
-                    <a href="https://jekyllrb.com/" class="list-group-item list-group-item-action list-group-item-info text-center"target="_blank">Yekyll</a>
-                    <a href="https://getbootstrap.com/" class="list-group-item list-group-item-action list-group-item-secondary text-center"target="_blank">Bootstrap</a>
-                </div>
-            </div>
-        </div>
-        <div class="text-center text-light"style="padding-top: 10px; font-size:1.2rem; margin-top: 15px;">© 2019 Copyright:  
-            <a href="/" class="font-weight-bold"> q5ca</a>
-        </div>
-    </div>  
-</footer>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<p class="font-weight-bold" style="padding: 0.9rem;border-radius: 15px 50px 30px; border: 3px solid #28a745; ">Sau khi học môn tin đại cương ở trường, tôi được biết về cách biểu diễn số thực theo chuẩn IEEE 754 85. Bạn nào không biết google sẽ ra. Tuy nhiên, tôi chưa được kiểm chứng ứng dụng thực tế của nó bởi  chương trình học ở trường chỉ tập trung vào việc chuyển đổi cách biểu diễn các số trên giấy thôi 😂. Học cái gì cũng vậy, phải biết nó có tính thực tế mới thấy nó hay và bổ ích phải không. Cho nên hôm nay tôi quyết định làm thí nghiệm tí.</p>
+<p>Cơ bản thì IEEE 754/85 là cách chuyển số thực dấu thành dãy các bit 0 1 để lưu trong bộ nhớ máy tính. Dãy các bit gồm 3 phần sign(1 bit), exponent, mantissa. Tùy vào độ chính xác biểu diễn mà tổng số lượng các bit và số bít của phần exponent và mantissa khác nhau. Link thêm: <a href="https://en.wikipedia.org/wiki/IEEE_754" class="text-information">https://en.wikipedia.org/wiki/IEEE_754</a></p>
+<p>Ở đây tôi thí nghiệm với độ chính xác là đơn, số thực sẽ được biểu diễn bằng 32 bit: 1 bit sign, 8 bit exponent, 23 bit mantissa.</p>
+<img src="{{ "/assets/images/1.jpg" | relative_url }}" >
+<p>Cụ thể cách biểu diễn như thế nào ta đi vào thí nghiệm.</p>
+<img src="{{ "/assets/images/34.PNG" | relative_url }}" style="width:290px">
+<p>Tôi chọn giá trị 8.25 để cho đơn giản, sẽ giải thích sau. Dùng gdb reverse ta được.</p>
+<img src="{{ "/assets/images/35.PNG" | relative_url }}" style="width:550px">
+<p>fld và fstp là 2 lệnh liên quan đến xử lí số thực trong máy tính. Tôi không đi vào phân tích 2 lệnh này bởi giờ ta chỉ cần tìm xem số 8.25 được lưu ở đâu và lưu là gì thôi cho đơn giản. Ta đã biết biến tt được lưu trong stack, nên chắc chắn [ebp-0x4] chính là vị trí của nó.</p>
+<p>run qua lệnh fstp ta được giá trị</p>
+<img src="{{ "/assets/images/36.PNG" | relative_url }}" style="width:650px">
+<p>check lại</p>
+<img src="{{ "/assets/images/37.PNG" | relative_url }}" style="width:250px">
+<p>Okii giờ tiến hành phân tích</p>
+<img src="{{ "/assets/images/38.PNG" | relative_url }}" style="width:430px">
+<p>
+    Chuyển ra nhị phân ta có 31 bit có nghĩa là bit dấu ở đầu bằng 0, đây là số dương. 8 bit tiếp theo là exponent chuyển sang hệ 10 là 130, 23 bit còn lại là mantissa ta giữ nguyên.
+</p>
+<p>
+    Để chuyển số thực về hệ 10 ta dùng công thức
+</p>
+<img src="https://s0.wp.com/latex.php?latex=%28-1%29%5ES%2AM%2A2%5EE&bg=ffffff&fg=222222&s=3"class="mx-auto d-block img-fluid">
+<p style="margin-top:1rem;">
+    với S là sign, M là số thập phân hệ 2 có phần nguyên là 1 và phần lẻ là mantissa, E là exponent trừ đi 127
+</p>
+<img src="https://s0.wp.com/latex.php?latex=%28-1%29%5E0%2A1.00001%2A2%5E3+%3D+1000.01+%5Crightarrow+8.25&bg=ffffff&fg=222222&s=3"class="mx-auto d-block img-fluid">
+<p style="margin-top:1rem;">
+    Ở đây các bạn cũng nhận ra việc tôi chon 8.25 vì cơ số là 2 nên việc chuyển đổi rất dễ dàng.
+</p>
+<p>
+    Giờ ta thử với một trường hợp tổng quát hơn, -12.34 đi.
+</p>
+<img src="{{ "/assets/images/39.PNG" | relative_url }}" style="width:450px; margin-bottom: 1.5rem;">
+<img src="https://s0.wp.com/latex.php?latex=%28-1%29%5E1+%2A+1.10001010111000010100100+%2A+2%5E3+%5Crightarrow+-12.3400001525878906&bg=ffffff&fg=222222&s=3" class="mx-auto d-block img-fluid">
+<p  style="margin-top:1rem;">
+    Như vậy ta cũng nhận thấy một điều là dùng cách biểu diễn này số thực sẽ có một phần sai số.
+</p>
 <script>
-    $("img").addClass("mx-auto d-block img-fluid");
+$("header").html('<div class="row"> <div class="col-lg-1"></div><div class="col-lg-6"><h1 class="text-center display-4 ">Nghiệm lại cách biểu diễn số thực trong máy tính</h1></div><div class="col-lg-4"></div></div>');
 </script>
-</body>
-</html>
-<div style="display: none;">
-    <div>

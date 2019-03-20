@@ -1,0 +1,25 @@
+.parallax{
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Oswald', sans-serif;
+}
+/* post-list */
+#post-list{
+    padding-top:69px; 
+    padding-bottom: 60px;
+    font-family: 'Open Sans', sans-serif;
+}
+#post-list .post{
+    min-height: 30rem;
+}
+#post-list .post-thumb{
+    object-fit: cover;
+    object-position: 0 0;
+    max-height: 15rem;
+}
+#post-list .card-title{
+    font-family: 'Roboto Slab', serif;
+}
+

@@ -1,16 +1,11 @@
-.content-container{
-    font-size: 1.5rem;
-    line-height: 1.8;
-}
-
 .navbar{
     border-bottom: 3px solid #dc3545;
 }
-footer{
-    width:100%;
-    border-top: 3px solid #dc3545;
-    background-color: #f95a5a;
-    margin-top: 50px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+header{
+    border-bottom: 3px solid #fbb258;
+    padding-top: 65px;
 }
+h1{
+    color: #dc3545!important;
+}
+
