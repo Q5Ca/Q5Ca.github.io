@@ -6,9 +6,6 @@
     font-family: 'Oswald', sans-serif;
 }
 /* post-list */
-#page-wrapper #post-list{
-    font-family: 'Open Sans', sans-serif;
-}
 #page-wrapper  #post-list .post{
     min-height: 30rem;
 }

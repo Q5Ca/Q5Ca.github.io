@@ -1,13 +1,18 @@
-<footer class="pb-4 pt-4"style="background-color: {{include.colorTheme}}">
+<footer class="pb-4 pt-4 mt-auto"style="background-color: {{include.colorTheme}}">
     <div class="container" >
         <div class="row mb-4">
-            <div class="col-md-2"></div>
-            <div class="col-md-2"><p class="text-center text-light font-weight-bold " style="padding-top: 10px; font-size:1.2rem;">Powered by:</p></div>
-            <div class="col-md-4">
-                <div class="list-group">
-                    <a href="https://pages.github.com/" class="list-group-item list-group-item-action list-group-item-warning text-center"target="_blank">GitHub Pages</a>
-                    <a href="https://jekyllrb.com/" class="list-group-item list-group-item-action list-group-item-info text-center"target="_blank">Yekyll</a>
-                    <a href="https://getbootstrap.com/" class="list-group-item list-group-item-action list-group-item-secondary text-center"target="_blank">Bootstrap</a>
+            <div class="col-md-3 ml-auto text-center">
+                <div class="btn-group dropup">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Powered by
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer"class="dropdown-item">GitHub Pages</a>
+                        <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer"class="dropdown-item">Yekyll</a>
+                        <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer"class="dropdown-item">Bootstrap</a>
+                        <a href="https://analytics.google.com/analytics/web/" target="_blank" rel="noopener noreferrer"class="dropdown-item">Google Analytics</a>
+                        <a href="https://disqus.com/" target="_blank" rel="noopener noreferrer"class="dropdown-item">Disqus</a>
+                    </div>
                 </div>
             </div>
         </div>

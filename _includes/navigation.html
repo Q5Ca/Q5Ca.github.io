@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm fixed-top navbar-dark" style="background-color: {{include.colorTheme}}">
+<nav class="navbar navbar-expand-md fixed-top navbar-dark" style="background-color: {{include.colorTheme}}">
     <a class="navbar-brand" href="/">
         <img src="{{"/assets/images/brand0.jpg" | relative_url }}" alt="Logo" style="width:30px;">
     </a>
@@ -26,6 +26,14 @@
             <li class="nav-item">
                 <a class="nav-link" href="/">Tools,tricks</a>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="/references/">References</a>
+                </div>
+            </li>
         </ul>
-    </div> 
+    </div>  
 </nav>

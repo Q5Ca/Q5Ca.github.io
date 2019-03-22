@@ -1,6 +1,7 @@
-body{
+#body-wrapper{
     padding-top: 56.94px; 
     word-wrap:break-word;
+    min-height: 100vh;
 }
 /* header */
 header{
@@ -18,6 +19,9 @@ header h1{
     text-align: center;
 }
 /* page-wrapper */
+#page-wrapper{
+    font-family: 'Open Sans', sans-serif;
+}
 #page-wrapper .page-comp{
     padding-top:69px; 
     padding-bottom: 60px;
