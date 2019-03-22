@@ -17,6 +17,12 @@ header h1{
     color: white;
     text-align: center;
 }
+/* page-wrapper */
+#page-wrapper .page-comp{
+    padding-top:69px; 
+    padding-bottom: 60px;
+}
+/* footer */
 footer{
     font-size: 1.2rem;
 }

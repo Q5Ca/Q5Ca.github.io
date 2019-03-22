@@ -1,15 +1,7 @@
 /* content */
-#content-wrapper{
-    padding-top: 69px;
-    padding-bottom: 60px;
-}
-#content-wrapper #content{
+#page-wrapper #post-content{
     font-family: 'Open Sans', sans-serif;
     font-size: 1.5rem;
     line-height: 1.8;
 }
 /* chat */
-#chat-wrapper{
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
