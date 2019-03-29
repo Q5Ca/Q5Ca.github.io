@@ -6,7 +6,7 @@ categories: CTF
 tags: [re, 0ctf, double, systemofequations]
 excerpt: "A flag checker. We have to solve system of equaltions to find the flag"
 post-thumb: post-thumb-2.png
-comments: false
+comments: true
 color-theme: "#11385f"
 js-files: ["no-header", "wu-elements"]
 ---

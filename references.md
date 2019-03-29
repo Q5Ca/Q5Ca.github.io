@@ -5,7 +5,7 @@ color-theme: "#11385f"
 description: "Some interesting resources"
 permalink: "/references/"
 js-files: ["no-header"]
-comments: true
+comments: false
 ---
 # Some interesting things I found on the internet
 ## 1. web - XSS
