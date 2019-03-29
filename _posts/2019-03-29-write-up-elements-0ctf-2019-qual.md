@@ -3,8 +3,9 @@ lang: "en"
 layout: no-header
 title: "Writeup Elements - re - 0ctf 2019 quals"
 categories: CTF
-tags: [re, 0ctf, double, equations]
-excerpt: lol
+tags: [re, 0ctf, double, systemofequations]
+excerpt: "A flag checker. We have to solve system of equaltions to find the flag"
+post-thumb: post-thumb-2.png
 comments: false
 color-theme: "#11385f"
 js-files: ["no-header", "wu-elements"]
