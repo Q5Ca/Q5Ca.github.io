@@ -4,7 +4,7 @@ layout: no-header
 title: "Writeup Elements - re - 0ctf 2019 quals"
 categories: CTF
 tags: [re, 0ctf, double, systemofequations]
-excerpt: "A flag checker. We have to solve system of equaltions to find the flag"
+excerpt: "A flag checker. We have to solve system of equations to find the flag"
 post-thumb: post-thumb-2.png
 comments: true
 color-theme: "#11385f"
@@ -80,7 +80,7 @@ And I recognize the following:
   
   ![gdb](/assets/images/74.png)
 
-  So the equaltions can be represents in Python like this
+  So the equations can be represents in Python like this
 
   ![python](/assets/images/76.PNG)
 
