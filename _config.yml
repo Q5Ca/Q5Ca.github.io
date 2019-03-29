@@ -13,7 +13,14 @@ kramdown:
 highlighter: rouge
 plugins:
   - jekyll-feed
+
   - jekyll-seo-tag
   - jekyll-sitemap
 permalink: /:categories/:title-:month-:day-:year.html
-environment: production
+environment: development
+defaults:
+  -
+    scope:
+      path: "" 
+    values:
+      lang: "vi"

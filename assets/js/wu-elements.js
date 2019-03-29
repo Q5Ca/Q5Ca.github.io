@@ -1,0 +1,1 @@
+$("#page-wrapper #page-content img").addClass("mx-auto d-block img-fluid mb-3");

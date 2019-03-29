@@ -13,10 +13,12 @@ header{
     position: relative;
 }
 header h1{
-    font-weight: bold; 
-    font-family: 'Roboto Slab', serif;
     color: white;
     text-align: center;
+}
+h1{
+    font-weight: bold; 
+    font-family: 'Roboto Slab', serif;
 }
 /* page-wrapper */
 #page-wrapper{

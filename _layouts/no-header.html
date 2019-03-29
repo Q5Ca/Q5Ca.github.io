@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<div id="page-wrapper">
+    <div class="container page-comp">
+        <div class="container"id="page-content">
+            {{ content }}
+        </div>
+    </div>
+{% if page.comments %}
+    <div class="container page-comp"id="chat">
+        {% include disqus.html %}
+    </div>
+{% endif %}
+</div>
