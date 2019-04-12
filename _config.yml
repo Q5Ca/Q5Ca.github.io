@@ -17,7 +17,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 permalink: /:categories/:title-:month-:day-:year.html
-environment: production
+environment: development
 defaults:
   -
     scope:

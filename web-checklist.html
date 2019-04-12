@@ -1,0 +1,83 @@
+---
+layout: left-side-header
+permalink: "/web-checklist/"
+title: "web pentest checklist"
+comment: false
+color-theme: "#040829"
+header-image: web-check-list-header.jpg
+css-file: "web-checklist"
+js-files: ["web-checklist"]
+---
+<h1 class="text-center">Web pentest checklist !!!</h1>
+<ul>
+    <li>
+        <h2>Reconnaissance</h2>
+        <input type="checkbox">Nghịch<br>
+        <input type="checkbox">robots.txt<br>
+        <input type="checkbox">Cookies<br>
+        <input type="checkbox">HTTP Headers<br>
+        <input type="checkbox">Server<br>
+        <input type="checkbox">Frontend: comments, keywords<br>
+        <input type="checkbox">old, bak files<br>
+        <input type="checkbox">dirb<br>
+    </li>
+    <li>
+        <h2>Advanced reconnaissance</h2>
+        <input type="checkbox">nmap<br>
+        <input type="checkbox">HTTP verb<br>
+        <input type="checkbox">User-agents<br>
+    </li>
+    <li>
+        <div class="d-flex justify-content-between">
+            <h2>PHP</h2>
+            <a class="mt-auto mb-auto mr-lg-5" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                More&#x25BC;
+            </a>
+        </div>
+        <div class="collapse" id="collapseExample">
+            <input type="checkbox">Directory indexing.<br>
+            <input type="checkbox">directory travel, LFI, RFI<br>
+            <input type="checkbox">upload lib, use LD_PRELOAD to bypass disable_function<br>
+            <div class="ml-3 mr-3">
+                <div class="d-flex justify-content-between">
+                    <span class="font-weight-bold">PHP filters</span>
+                    <a class="mt-auto mb-auto mr-lg-5" data-toggle="collapse" href="#php-wrapper" role="button" aria-expanded="false" aria-controls="php-wrapper">
+                        More&#x25BC;
+                    </a>
+                </div>
+                <div class="collapse" id="php-wrapper">
+                    <input type="checkbox">Directory indexing.<br>
+                    <input type="checkbox">directory travel, LFI, RFI<br>
+                </div>
+            </div>
+        </div>
+    </li>
+
+    <input type="checkbox">PHP filters<br>
+
+    <input type="checkbox">weak password, bruteforce<br>
+    <input type="checkbox">Redirecting without die()<br>
+
+    <li>
+        <h2>Upload files</h2>
+        <input type="checkbox">extensions<br>
+        <input type="checkbox">MIME types<br>
+        <input type="checkbox">NULL byte (%00, hexedit burp)<br>
+    </li>
+    <li>
+        <h2>SQLi</h2>
+        <input type="checkbox">union based<br>
+    </li>
+    <li>
+        <h2>Frameworks</h2>
+        <ul>
+            <li>
+                <h4>jetty</h4>
+            </li>
+            <li>
+                <h4>spring</h4>
+                <input type="checkbox">AutoBinding / Mass Assignment <a href="https://github.com/w181496/Web-CTF-Cheatsheet" target="_blank" rel="noopener noreferrer">ref0(find autobind)</a> <a href="https://ctftime.org/task/7959" target="_blank" rel="noopener noreferrer">ref1</a> <a href="https://ctftime.org/task/7975" target="_blank" rel="noopener noreferrer">ref2</a> <br>
+            </li>
+        </ul>
+    </li>
+</ul>

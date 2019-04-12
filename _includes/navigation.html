@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md fixed-top navbar-dark" style="background-color: {{include.colorTheme}}">
+<nav id="navigator" class="navbar navbar-expand-md fixed-top navbar-dark" style="background-color: {{include.colorTheme}}">
     <a class="navbar-brand" href="/">
         <img src="{{"/assets/images/brand0.jpg" | relative_url }}" alt="Logo" style="width:30px;">
     </a>
@@ -14,23 +14,31 @@
             <li class="nav-item">
                 <a class="nav-link" href="/">H0m3</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="/about/">Ab0ut</a>
-            </li>
+            </li> -->
             <li class="nav-item">
                 <a class="nav-link" href="/">CTF</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="/">Realworld,CVE</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/">Tools,tricks</a>
+            </li> -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="checklist-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Checklists
+                </a>
+                <div class="dropdown-menu" aria-labelledby="checklist-link">
+                    <a class="dropdown-item" href="/web-checklist/">Web pentest checklist</a>
+                </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="more-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     More
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <div class="dropdown-menu" aria-labelledby="more-link">
                     <a class="dropdown-item" href="/references/">References</a>
                 </div>
             </li>

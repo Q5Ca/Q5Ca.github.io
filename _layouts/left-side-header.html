@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<link rel="stylesheet" href="{{ "/assets/css/left-side-header.css" | relative_url }}">
+<div class="container-fluid">
+    <div class="row">
+        <div id="left-header" class="d-none d-md-block col-md-4 col-lg-3"style="background-image: url('/assets/images/{{page.header-image}}');">
+        </div>
+        <div class="col-12 col-md-8 offset-md-4 col-lg-9 offset-lg-3"id="page-wrapper">
+            <div class="container page-comp" id="post-content">
+                {{ content }}
+            </div>
+            {% if page.comments %}
+            <div class="container page-comp"id="chat">
+                {% include disqus.html %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
