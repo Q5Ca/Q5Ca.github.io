@@ -14,7 +14,8 @@ comments: false
 ## 2. web - HTTP smuggling
 - [http://regilero.github.io/security/english/2015/10/04/http_smuggling_in_2015_part_one/](http://regilero.github.io/security/english/2015/10/04/http_smuggling_in_2015_part_one/)
 
-## 3.
+## 3. web - command injection
+- [https://4lemon.ru/2017-01-17_facebook_imagetragick_remote_code_execution.html](https://4lemon.ru/2017-01-17_facebook_imagetragick_remote_code_execution.html) dns-based RCE from imagetragick
 
 ## 4. 
 
