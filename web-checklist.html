@@ -9,30 +9,46 @@ css-file: "web-checklist"
 js-files: ["web-checklist"]
 ---
 <h1 class="text-center">Web pentest checklist !!!</h1>
+<h2>Server side</h2>
 <ul>
     <li>
-        <h2>Reconnaissance</h2>
+        <h3>Reconnaissance</h3>
         <input type="checkbox">robots.txt<br>
         <input type="checkbox">Nghịch<br>
         <input type="checkbox">cookies<br>
         <input type="checkbox">directory indexing.<br>
-        <input type="checkbox">Server<br>
+        <div class="ml-3 mr-3">
+            <div class="d-flex justify-content-between">
+                <span class="font-weight-bold">Headers</span>
+                <a data-toggle="collapse" href="#headers" role="button" aria-expanded="false" aria-controls="headers">
+                    More&#x25BC;
+                </a>
+            </div>
+            <div class="collapse" id="headers">
+                <ul> 
+                    <li> <span class="text-success">Server</span> </li> 
+                    <li> <span class="text-success">x-cache, x-status, hit/miss:</span> web cache</li>
+                    <li> <span class="text-success"> X-Application-Context:</span> spring boot  </li>
+                </ul>
+            </div>
+        </div>
         <input type="checkbox">frontend: comments, js, css, ...<br>
-        <input type="checkbox">old, bak files<br>
+        <input type="checkbox">old, bak files, git, bzr, ...<br>
         
     </li>
     <li>
-        <h2>Advanced reconnaissance</h2>
+        <h3>Advanced reconnaissance</h3>
         <input type="checkbox">HTTP Headers<br>
         <input type="checkbox">dirb<br>
+        <input type="checkbox">weak password, bruteforce<br>
         <input type="checkbox">HTTP verb<br>
         <input type="checkbox">User-agents<br>
         <input type="checkbox">nmap<br>
-        <input type="checkbox">weak password, bruteforce<br>
+        
     </li>
     <li>
         <div class="d-flex justify-content-between">
-            <h2>PHP</h2>
+            <h3>PHP</h3>
             <a data-toggle="collapse" href="#php" role="button" aria-expanded="false" aria-controls="php">
                 More&#x25BC;
             </a>
@@ -68,24 +84,46 @@ js-files: ["web-checklist"]
                     <input type="checkbox">upload zipped payload <span class="text-danger">zip://shell.jpg%23payload.php</span> <br>
                 </div>
             </div>
+            <div class="ml-3 mr-3">
+                <div class="d-flex justify-content-between">
+                    <span class="font-weight-bold">deserialize</span>
+                    <a data-toggle="collapse" href="#deserialize" role="button" aria-expanded="false" aria-controls="deserialize">
+                        More&#x25BC;
+                    </a>
+                </div>
+                <div class="collapse" id="deserialize">
+                    <input type="checkbox"> <a href="https://github.com/ambionics/phpggc" target="_blank" rel="noopener noreferrer">phpggc</a> <br>
+                    <input type="checkbox">using file function with phar wrapper  <a href="https://blog.ripstech.com/2018/new-php-exploitation-technique/" target="_blank" rel="noopener noreferrer">ripstech-New-PHP-Exploitation-Technique-Added</a> | <a href="file:///E:/Documents/infosec/us-18-Thomas-It's-A-PHP-Unserialization-Vulnerability-Jim-But-Not-As-We-Know-It.pdf" target="_blank" rel="noopener noreferrer">It’s-a-PHP-unserialization-vulnerability-Jim,
+                    ...</a> <br>
+                </div>
+            </div>
         </div>
     </li>
     <li>
-        <h2>command inject</h2>
+        <h3>command inject</h3>
         <input type="checkbox">sleep 3<br>
         <input type="checkbox">%0asleep 3<br>
         <input type="checkbox">dns-based <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Command%20Injection#dns-based-data-exfiltration" target="_blank" rel="noopener noreferrer">ref0</a><br>
         
     </li>
     <li>
-        <h2>SQLi</h2>
-        <input type="checkbox">union based<br>
-        <input type="checkbox">SQL truncation<br>
+        <h3>SQLi</h3>
+        <ul>
+            <li>
+                <h4>escaped</h4>
+                <input type="checkbox">use \<br>
+                <input type="checkbox">use \" with json <br>
+            </li>
+            <li>
+                <h4>others</h4>    
+                <input type="checkbox">SQL truncation<br>
+            </li>
+        </ul>
     </li>
     
 
     <li>
-        <h2>Upload files</h2>
+        <h3>Upload files</h3>
         <input type="checkbox">extensions<br>
         <input type="checkbox">MIME types<br>
         <input type="checkbox">NULL byte (%00, hexedit burp)<br>
@@ -93,30 +131,34 @@ js-files: ["web-checklist"]
 
     </li>
     <li>
-        <h2>XXE</h2>
+        <h3>XXE</h3>
         <input type="checkbox">out of band <a href="https://medium.com/@hkln1/xxe-everywhere-923bb85b7f3f" target="_blank" rel="noopener noreferrer">ref0</a> <br>
     </li>
     <li>
-        <h2>SSTI</h2>
+        <h3>SSTI</h3>
         <input type="checkbox"> <a href="https://www.blackhat.com/docs/us-15/materials/us-15-Kettle-Server-Side-Template-Injection-RCE-For-The-Modern-Web-App-wp.pdf" target="_blank" rel="noopener noreferrer">portswigger</a> <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection" target="_blank" rel="noopener noreferrer">payload-all-the-thing</a> <br>
     </li>
     <li>
-        <h2>More</h2>
+        <h3>More</h3>
         <input type="checkbox">xslt<br>
         <input type="checkbox">LDAP inject<br>
         <input type="checkbox">XPATH inject<br>
     </li>
     <li>
-        <h2>Frameworks</h2>
+        <h3>Frameworks</h3>
         <ul>
             <li>
-                <h4>spring</h4>
+                <h4>spring framework</h4>
                 <input type="checkbox">AutoBinding / Mass Assignment <a href="https://github.com/w181496/Web-CTF-Cheatsheet" target="_blank" rel="noopener noreferrer">ref0(find autobind)</a> <a href="https://ctftime.org/task/7959" target="_blank" rel="noopener noreferrer">ref1</a> <a href="https://ctftime.org/task/7975" target="_blank" rel="noopener noreferrer">ref2</a> <br>
+            </li>
+            <li>
+                <h4>spring boot</h4>
+                <input type="checkbox">Actuator endpoints <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/404afd1d719b59c2a7600b83b5ed4583f8c822e9/Insecure%20Management%20Interface" target="_blank" rel="noopener noreferrer">swisskyrepo</a> <a href="https://www.veracode.com/blog/research/exploiting-spring-boot-actuators" target="_blank" rel="noopener noreferrer">ref0</a>
             </li>
         </ul>
     </li>
     <li>
-        <h2>Applications</h2>
+        <h3>Applications</h3>
         <ul>
             <li>
                 <h4>jolokia</h4>
@@ -126,3 +168,12 @@ js-files: ["web-checklist"]
     </li>
 </ul>
 crlf, nosql
+<hr class="border-info">
+<h2>Client side</h2>
+<ul>
+    <li>
+        <h3>XSS via upload file</h3>
+        <input type="checkbox">upload SVG  <a href="https://ctftime.org/task/7830" target="_blank" rel="noopener noreferrer">confident2019-web-50</a> <a href="https://blog.veryhax.ninja/blog/meepwn-lonelyboy/" target="_blank" rel="noopener noreferrer">meepwn-lonely-boy</a> <br>
+        <input type="checkbox">upload polyglot JPEG portswigger-Bypassing-CSP-using-p...<br>
+    </li>
+</ul>
