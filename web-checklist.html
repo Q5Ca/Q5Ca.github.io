@@ -28,7 +28,7 @@ js-files: ["web-checklist"]
                 <ul> 
                     <li> <span class="text-success">Server</span> </li> 
                     <li> <span class="text-success">x-cache, x-status, hit/miss:</span> web cache</li>
-                    <li> <span class="text-success"> X-Application-Context:</span> spring boot  </li>
+                    <li> <span class="text-success">X-Application-Context:</span> spring boot  </li>
                 </ul>
             </div>
         </div>
@@ -108,17 +108,15 @@ js-files: ["web-checklist"]
     </li>
     <li>
         <h3>SQLi</h3>
-        <ul>
-            <li>
-                <h4>escaped</h4>
-                <input type="checkbox">use \<br>
-                <input type="checkbox">use \" with json <br>
-            </li>
-            <li>
-                <h4>others</h4>    
-                <input type="checkbox">SQL truncation<br>
-            </li>
-        </ul>
+        <div class="ml-3 mr-3">
+            <span class="font-weight-bold">escaped</span> <br>
+            <input type="checkbox">use \<br>
+            <input type="checkbox">use \" with json <br>   
+        </div>
+        <div class="ml-3 mr-3">
+            <span class="font-weight-bold">others</span> <br>
+            <input type="checkbox">SQL truncation<br>
+        </div>
     </li>
     
 
@@ -146,25 +144,42 @@ js-files: ["web-checklist"]
     </li>
     <li>
         <h3>Frameworks</h3>
-        <ul>
-            <li>
-                <h4>spring framework</h4>
+        <div class="ml-3 mr-3">
+            <div class="d-flex justify-content-between">
+                <span class="font-weight-bold">spring framework</span>
+                <a data-toggle="collapse" href="#spring-framework" role="button" aria-expanded="false" aria-controls="spring-framework">
+                    More&#x25BC;
+                </a>
+            </div>
+            <div class="collapse" id="spring-framework">
                 <input type="checkbox">AutoBinding / Mass Assignment <a href="https://github.com/w181496/Web-CTF-Cheatsheet" target="_blank" rel="noopener noreferrer">ref0(find autobind)</a> <a href="https://ctftime.org/task/7959" target="_blank" rel="noopener noreferrer">ref1</a> <a href="https://ctftime.org/task/7975" target="_blank" rel="noopener noreferrer">ref2</a> <br>
-            </li>
-            <li>
-                <h4>spring boot</h4>
+            </div>
+        </div>
+        <div class="ml-3 mr-3">
+            <div class="d-flex justify-content-between">
+                <span class="font-weight-bold">spring boot</span>
+                <a data-toggle="collapse" href="#spring-boot" role="button" aria-expanded="false" aria-controls="spring-boot">
+                    More&#x25BC;
+                </a>
+            </div>
+            <div class="collapse" id="spring-boot">
                 <input type="checkbox">Actuator endpoints <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/404afd1d719b59c2a7600b83b5ed4583f8c822e9/Insecure%20Management%20Interface" target="_blank" rel="noopener noreferrer">swisskyrepo</a> <a href="https://www.veracode.com/blog/research/exploiting-spring-boot-actuators" target="_blank" rel="noopener noreferrer">ref0</a>
-            </li>
-        </ul>
+            </div>
+        </div>
     </li>
     <li>
         <h3>Applications</h3>
-        <ul>
-            <li>
-                <h4>jolokia</h4>
+        <div class="ml-3 mr-3">
+            <div class="d-flex justify-content-between">
+                <span class="font-weight-bold">jolokia</span>
+                <a data-toggle="collapse" href="#jolokia" role="button" aria-expanded="false" aria-controls="jolokia">
+                    More&#x25BC;
+                </a>
+            </div>
+            <div class="collapse" id="jolokia">
                 <input type="checkbox">install new jar <a href="https://ctftime.org/task/7891" target="_blank" rel="noopener noreferrer">0ctf2019 - ghostpepper</a> <br>
-            </li>
-        </ul>
+            </div>
+        </div>
     </li>
 </ul>
 crlf, nosql
