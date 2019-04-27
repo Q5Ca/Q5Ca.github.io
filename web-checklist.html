@@ -33,7 +33,7 @@ js-files: ["web-checklist"]
             </div>
         </div>
         <input type="checkbox">frontend: comments, js, css, ...<br>
-        <input type="checkbox">old, bak files, git, bzr, ...<br>
+        <input type="checkbox">old, bak files (backup.zip, ctf_name.zip,...), git, bzr, ...<br>
         
     </li>
     <li>
@@ -54,7 +54,7 @@ js-files: ["web-checklist"]
             </a>
         </div>
         <div class="collapse" id="php">
-            <input type="checkbox">directory travel, LFI <span class="text-danger">(php://filter/read=string.rot13/resource=, pHp://FilTer/convert.base64-encode/resource= )</span> <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/File%20Inclusion#lfi--rfi-using-wrappers" target="_blank" rel="noopener noreferrer">ref0</a> <br>
+            <input type="checkbox">directory travel, LFI <span class="text-danger">(php://filter/read=string.rot13/resource=, pHp://FilTer/convert.base64-encode/resource= )</span> <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/File%20Inclusion#lfi--rfi-using-wrappers" target="_blank" rel="noopener noreferrer">payload-all-the-thing</a> <br>
             <input type="checkbox">RFI<br>
             <input type="checkbox">Loose compare, type jungle <a href="https://www.php.net/manual/en/types.comparisons.php" target="_blank" rel="noopener noreferrer">PHP-type-comparison-tables</a> <br>
             <input type="checkbox">Redirecting without die()<br>
@@ -73,14 +73,17 @@ js-files: ["web-checklist"]
             </div>
             <div class="ml-3 mr-3">
                 <div class="d-flex justify-content-between">
-                    <span class="font-weight-bold">advanced inclusion <a href="https://www.rcesecurity.com/2017/08/from-lfi-to-rce-via-php-sessions/" target="_blank" rel="noopener noreferrer">ref0</a> </span>
+                    <span class="font-weight-bold">advanced inclusion  </span>
                     <a data-toggle="collapse" href="#advanced-inclusion" role="button" aria-expanded="false" aria-controls="advanced-inclusion">
                         More&#x25BC;
                     </a>
                 </div>
                 <div class="collapse" id="advanced-inclusion">
                     <input type="checkbox">RCE <span class="text-danger">data://text/plain;base64,PD9waHAgc3lzdGVtKCRfR0VUWydjbWQnXSk7ZWNobyAnU2hlbGwgZG9uZSAhJzsgPz4=</span> <br>
-                    <input type="checkbox">RCE <span class="text-danger">expect://ls</span> <br>
+                    <input type="checkbox">RCE <span class="text-danger">php://input</span> <br>
+                    <input type="checkbox">RCE <span class="text-danger">/proc/self/fd/...(brute)</span> <br>
+                    <!-- <input type="checkbox">RCE <span class="text-danger">expect://ls</span> <br> -->
+                    <input type="checkbox"><a href="https://www.rcesecurity.com/2017/08/from-lfi-to-rce-via-php-sessions/" target="_blank" rel="noopener noreferrer">via-php-sessions</a> <br>
                     <input type="checkbox">upload zipped payload <span class="text-danger">zip://shell.jpg%23payload.php</span> <br>
                 </div>
             </div>
@@ -92,6 +95,7 @@ js-files: ["web-checklist"]
                     </a>
                 </div>
                 <div class="collapse" id="deserialize">
+                    <input type="checkbox">use S and \00 to bypass null byte filter <a href="#" target="_blank" rel="noopener noreferrer">mates2019r4-web2</a> <br>
                     <input type="checkbox"> <a href="https://github.com/ambionics/phpggc" target="_blank" rel="noopener noreferrer">phpggc</a> <br>
                     <input type="checkbox">using file function with phar wrapper  <a href="https://blog.ripstech.com/2018/new-php-exploitation-technique/" target="_blank" rel="noopener noreferrer">ripstech-New-PHP-Exploitation-Technique-Added</a> | <a href="file:///E:/Documents/infosec/us-18-Thomas-It's-A-PHP-Unserialization-Vulnerability-Jim-But-Not-As-We-Know-It.pdf" target="_blank" rel="noopener noreferrer">It’s-a-PHP-unserialization-vulnerability-Jim,
                     ...</a> <br>
@@ -143,7 +147,7 @@ js-files: ["web-checklist"]
         <input type="checkbox">XPATH inject<br>
     </li>
     <li>
-        <h3>Frameworks</h3>
+        <h3>Applications/Frameworks(misused, CVEs..)</h3>
         <div class="ml-3 mr-3">
             <div class="d-flex justify-content-between">
                 <span class="font-weight-bold">spring framework</span>
@@ -166,9 +170,6 @@ js-files: ["web-checklist"]
                 <input type="checkbox">Actuator endpoints <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/404afd1d719b59c2a7600b83b5ed4583f8c822e9/Insecure%20Management%20Interface" target="_blank" rel="noopener noreferrer">swisskyrepo</a> <a href="https://www.veracode.com/blog/research/exploiting-spring-boot-actuators" target="_blank" rel="noopener noreferrer">ref0</a>
             </div>
         </div>
-    </li>
-    <li>
-        <h3>Applications</h3>
         <div class="ml-3 mr-3">
             <div class="d-flex justify-content-between">
                 <span class="font-weight-bold">jolokia</span>
@@ -177,7 +178,18 @@ js-files: ["web-checklist"]
                 </a>
             </div>
             <div class="collapse" id="jolokia">
-                <input type="checkbox">install new jar <a href="https://ctftime.org/task/7891" target="_blank" rel="noopener noreferrer">0ctf2019 - ghostpepper</a> <br>
+                <input type="checkbox">install new jar <a href="https://ctftime.org/task/7891" target="_blank" rel="noopener noreferrer">0ctf2019-ghostpepper</a> <br>
+            </div>
+        </div>
+        <div class="ml-3 mr-3">
+            <div class="d-flex justify-content-between">
+                <span class="font-weight-bold">apache mod-cgi</span>
+                <a data-toggle="collapse" href="#mod-cgi" role="button" aria-expanded="false" aria-controls="mod-cgi">
+                    More&#x25BC;
+                </a>
+            </div>
+            <div class="collapse" id="mod-cgi">
+                <input type="checkbox">Shellshock <span class="text-danger">User-Agent: () { :;}; /bin/bash -c '...'</span> <a href="https://medium.com/@wywyit/ritsec-fall-2018-ctf-week-6-45d414035c76" target="_blank" rel="noopener noreferrer">ritsecctf-web4</a> | <a href="https://www.cvedetails.com/cve/CVE-2014-6271/" target="_blank" rel="noopener noreferrer">cve-detail</a> <br>
             </div>
         </div>
     </li>
@@ -189,6 +201,6 @@ crlf, nosql
     <li>
         <h3>XSS via upload file</h3>
         <input type="checkbox">upload SVG  <a href="https://ctftime.org/task/7830" target="_blank" rel="noopener noreferrer">confident2019-web-50</a> <a href="https://blog.veryhax.ninja/blog/meepwn-lonelyboy/" target="_blank" rel="noopener noreferrer">meepwn-lonely-boy</a> <br>
-        <input type="checkbox">upload polyglot JPEG portswigger-Bypassing-CSP-using-p...<br>
+        <input type="checkbox">upload polyglot JPEG <a href="https://portswigger.net/blog/bypassing-csp-using-polyglot-jpegs" target="_blank" rel="noopener noreferrer">portswigger-Bypassing-CSP-using-p...</a> <br>
     </li>
 </ul>
