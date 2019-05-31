@@ -13,7 +13,7 @@ kramdown:
 highlighter: rouge
 plugins:
   - jekyll-feed
-
+  - jemoji
   - jekyll-seo-tag
   - jekyll-sitemap
 permalink: /:categories/:title-:month-:day-:year.html
