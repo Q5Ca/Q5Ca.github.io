@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<link rel="stylesheet" href="{{ "/assets/css/post-with-toc.css" | relative_url }}">
+<div id="page-wrapper">
+    <div class="container">
+        <h1 class="text-center mt-5 mb-1">{{ page.h1 }}</h1>
+        <div class="row">
+            <div class="col-md-4" id="toc">
+                    {% include toc.html html=content %}
+            </div>
+            <div class="col-md-8">
+                <div class="container page-comp" id="post-content">
+                    {{ content }}
+                </div>
+                {% if page.comments %}
+                    <div class="container page-comp"id="chat">
+                        {% include disqus.html %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
