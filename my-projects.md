@@ -3,6 +3,7 @@ lang: "en"
 layout: post-with-toc
 title: "My projects"
 h1: "Collection of projects made by me"
+permalink: "/my-projects/"
 comments: true
 color-theme: "#441e02"
 js-files: ["post-with-toc"]
