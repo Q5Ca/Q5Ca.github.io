@@ -12,7 +12,7 @@
 #page-wrapper #post-list .post-thumb{
     object-fit: cover;
     object-position: 0 0;
-    max-height: 15rem;
+    max-height: 10rem;
 }
 #page-wrapper #post-list .card-title{
     font-family: 'Roboto Slab', serif;

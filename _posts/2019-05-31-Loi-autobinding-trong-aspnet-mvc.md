@@ -7,13 +7,13 @@ tags: [autobinding, aspnet, mvc]
 excerpt: "Lỗi Autobinding trong ASP.NET MVC"
 post-thumb: 206.PNG
 comments: true
-color-theme: "#441e02"
+color-theme: "#052f6f"
 js-files: ["post-with-toc"]
 ---
 
 ## Mở đầu
 Hi. Đã lâu không viết lách gì. Cũng tại dạo này tôi nhiều công chuyện quá. Thôi thì hôm nay xin được tái xuất với bài viết về một lỗi gần đây tôi có tìm hiểu.  
-Tôi nghe danh lỗi này từ giải volgactf2019. Giải đó có 2 bài web [shop](https://ctftime.org/task/7959) và [shop2](https://ctftime.org/task/7975) về lỗi này, code bằng java. Bẵng đi một thời gian, gần đây, tôi có làm một đề CTF dùng ASP.NET MVC về IDOR, cơ mà lại dính cả lỗi này nữa. May là không bị unintended. 
+Tôi nghe danh lỗi này từ giải volgactf2019. Giải đó có 2 bài web [shop](https://ctftime.org/task/7959) và [shop2](https://ctftime.org/task/7975) về lỗi này, code bằng java. Bẵng đi một thời gian, gần đây, tôi có làm một đề CTF dùng ASP.NET MVC về IDOR, cơ mà lại dính cả lỗi này nữa. May là không bị unintended. :relieved:  
 ## Lỗi gì đây ?
 Autobinding (hay còn gọi là Mass Assignment) là lỗi xảy ra khi developer bind trực tiếp param trong request với một biến hoặc một class của chương trình, thường là bind vào một Model. Lỗi này khá phổ biến trong các frameworks như: Spring MVC, ASP NET MVC, Ruby on Rails.
 ## Ví dụ
@@ -82,16 +82,22 @@ Phần View của Register tôi sẽ chỉ hiện form để người dùng đ�
 }
 ```
 Trông nó như lày:    
+
 ![200](/assets/images/200.PNG)
 Giờ tôi dùng form đăng kí một user mới, request của nó sẽ như thế này:  
+
 ![201](/assets/images/201.PNG)
 Kết quả user đã được tạo trong DB với trường Username là giá trị param trong request và IsAdmin nhận giá trị mặc định là 0.  
+
 ![202](/assets/images/202.PNG)  
 Thế nếu giờ thêm param IsAdmin vào thì sẽ như thế nào :thinking:  
+
 ![203](/assets/images/203.PNG)
 Boom, param đã map với thuộc tính của Model nên tôi đã tạo được user có trường IsAdmin do tôi control.  
+
 ![204](/assets/images/204.PNG)  
 Sau khi test thêm thì tôi nhận ra là tên của param và tên thuộc tính match với nhau case insensitive. Có nghĩa là có thể dùng param là isadmin, iSaDmIn hay ISADMIN đều được.  
+
 ![205](/assets/images/205.PNG)  
 ![206](/assets/images/206.PNG)
 ## Khai thác ?
@@ -124,7 +130,7 @@ public ActionResult Register(RegisterViewModel model)
     return View();
 }
 ```
-Bài viết đến đây là kết thúc, hẹn gặp lại các bạn vào một ngày đẹp trời.
+Bài viết đến đây là kết thúc, hẹn gặp lại các bạn vào một ngày đẹp trời. :sunglasses:
 ## References
 1. [https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Mass_Assignment_Cheat_Sheet.md](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Mass_Assignment_Cheat_Sheet.md)
 2. [https://odetocode.com/Blogs/scott/archive/2012/03/11/complete-guide-to-mass-assignment-in-asp-net-mvc.aspx](https://odetocode.com/Blogs/scott/archive/2012/03/11/complete-guide-to-mass-assignment-in-asp-net-mvc.aspx)
