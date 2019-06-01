@@ -4,7 +4,7 @@ title: "Lỗi Autobinding trong ASP.NET MVC"
 h1: "Lỗi Autobinding trong ASP.NET MVC"
 categories: Vulnerabilites
 tags: [autobinding, aspnet, mvc]
-excerpt: "Lỗi Autobinding trong ASP.NET MVC"
+excerpt: "Một lỗi gần đây tôi có tìm hiểu"
 post-thumb: 206.PNG
 comments: true
 color-theme: "#052f6f"
