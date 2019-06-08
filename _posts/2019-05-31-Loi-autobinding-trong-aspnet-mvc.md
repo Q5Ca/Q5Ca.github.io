@@ -15,7 +15,7 @@ js-files: ["post-with-toc"]
 Hi. Đã lâu không viết lách gì. Cũng tại dạo này tôi nhiều công chuyện quá. Thôi thì hôm nay xin được tái xuất với bài viết về một lỗi gần đây tôi có tìm hiểu.  
 Tôi nghe danh lỗi này từ giải volgactf2019. Giải đó có 2 bài web [shop](https://ctftime.org/task/7959) và [shop2](https://ctftime.org/task/7975) về lỗi này, code bằng java. Bẵng đi một thời gian, gần đây, tôi có làm một đề CTF dùng ASP.NET MVC về IDOR, cơ mà lại dính cả lỗi này nữa. May là không bị unintended. :relieved:  
 ## Lỗi gì đây ?
-Autobinding (hay còn gọi là Mass Assignment) là lỗi xảy ra khi developer bind trực tiếp param trong request với một biến hoặc một class của chương trình, thường là bind vào một Model. Lỗi này khá phổ biến trong các frameworks như: Spring MVC, ASP NET MVC, Ruby on Rails.
+Autobinding (hay còn gọi là Mass Assignment) là lỗi xảy ra khi developer bind trực tiếp param trong request với một biến hoặc một object của chương trình, thường là bind vào một Model. Lỗi này khá phổ biến trong các frameworks như: Spring MVC, ASP NET MVC, Ruby on Rails. Khai thác lỗi này, attacker sẽ control được thuộc tính của Model theo ý muốn. Nếu Model được lưu trong DB thì còn có thể control trường giá trị tương ứng với thuộc tính đó, dẫn đến nhiều lỗi khác nữa.
 ## Ví dụ
 Để ví dụ, tôi sẽ tạo một ứng dụng giả định cho phép người dùng reg account. Model của account được khai báo như sau.
 ```csharp
