@@ -28,14 +28,14 @@ js-files: ["web-checklist"]
             <div class="collapse" id="headers">
                 <ul> 
                     <li> <span class="text-success">Server</span> </li> 
-                    <li> <span class="text-success">X-Powered-By</span> PHP</li>
+                    <li> <span class="text-success">X-Powered-By:</span> PHP</li>
                     <li> <span class="text-success">x-cache, x-status, hit/miss:</span> web cache</li>
                     <li> <span class="text-success">X-Application-Context:</span> spring boot  </li>
                 </ul>
             </div>
         </div>
         <input type="checkbox">frontend: <span class="text-danger"> bottom of HTML</span>, comments, js, css, ...<br>
-        <input type="checkbox">old, bak files (backup.zip, ctf_name.zip,...), git, bzr, ...<br>
+        <input type="checkbox">old, bak files (backup.zip, ctf_name.zip,...), .git, .bzr, ...<br>
         
     </li>
     <li>
@@ -43,8 +43,6 @@ js-files: ["web-checklist"]
         <input type="checkbox">dump DNS, certs <a href="https://crt.sh/" target="_blank" rel="noopener noreferrer">crt.sh</a> <br>
         <input type="checkbox">dirb<br>
         <input type="checkbox">weak password, bruteforce<br>
-        <input type="checkbox">HTTP verb<br>
-        <input type="checkbox">User-agents<br>
         <input type="checkbox">nmap<br>
         
     </li>
@@ -99,6 +97,7 @@ js-files: ["web-checklist"]
                 </div>
                 <div class="collapse" id="deserialize">
                     <input type="checkbox">use S and \00 to bypass null byte filter <a href="#" target="_blank" rel="noopener noreferrer">mates2019r4-web2</a> <br>
+                    <input type="checkbox">use R to refer another property<br>
                     <input type="checkbox"> <a href="https://github.com/ambionics/phpggc" target="_blank" rel="noopener noreferrer">phpggc</a> <br>
                     <input type="checkbox">using file function with phar wrapper  <a href="https://blog.ripstech.com/2018/new-php-exploitation-technique/" target="_blank" rel="noopener noreferrer">ripstech-New-PHP-Exploitation-Technique-Added</a> | <a href="file:///E:/Documents/infosec/us-18-Thomas-It's-A-PHP-Unserialization-Vulnerability-Jim-But-Not-As-We-Know-It.pdf" target="_blank" rel="noopener noreferrer">It’s-a-PHP-unserialization-vulnerability-Jim,
                     ...</a> <br>
@@ -140,13 +139,16 @@ js-files: ["web-checklist"]
     <li>
         <h3>XXE</h3>
         <input type="checkbox">out of band <a href="https://medium.com/@hkln1/xxe-everywhere-923bb85b7f3f" target="_blank" rel="noopener noreferrer">ref0</a> <br>
+        <input type="checkbox">redefine local dtd <a href="https://mohemiv.com/all/exploiting-xxe-with-local-dtd-files/" target="_blank" rel="noopener noreferrer">//mohemiv.com/all/exploiting-xxe-with-local-dtd-files/</a> <br>
     </li>
     <li>
         <h3>SSTI</h3>
-        <input type="checkbox"> <a href="https://www.blackhat.com/docs/us-15/materials/us-15-Kettle-Server-Side-Template-Injection-RCE-For-The-Modern-Web-App-wp.pdf" target="_blank" rel="noopener noreferrer">portswigger</a> <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection" target="_blank" rel="noopener noreferrer">payload-all-the-thing</a> <br>
+        <input type="checkbox"> <a href="https://www.blackhat.com/docs/us-15/materials/us-15-Kettle-Server-Side-Template-Injection-RCE-For-The-Modern-Web-App-wp.pdf" target="_blank" rel="noopener noreferrer">portswigger</a>, <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection" target="_blank" rel="noopener noreferrer">payload-all-the-thing</a> <br>
     </li>
     <li>
         <h3>More</h3>
+        <input type="checkbox">User agent: <br>
+        <input type="checkbox">HTTP Verb Tampering<br>
         <input type="checkbox">xslt<br>
         <input type="checkbox">LDAP inject<br>
         <input type="checkbox">XPATH inject<br>
