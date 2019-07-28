@@ -130,11 +130,21 @@ js-files: ["web-checklist"]
 
     <li>
         <h3>Upload files</h3>
-        <input type="checkbox">extensions<br>
-        <input type="checkbox">MIME types<br>
-        <input type="checkbox">NULL byte (%00, hexedit burp)<br>
-        <input type="checkbox">upload zip file with symlink <span class="text-danger">ln -s ...; zip -y ... </span> <br>
-
+        <div class="ml-3 mr-3">
+            <span class="font-weight-bold">PHP</span> <br>
+            <input type="checkbox"><span class="text-danger">.php .php3 .php4 .php5 .php7 .htaccess .pht .phtm .phtml .phar .phps</span> <br>        
+            <input type="checkbox">upload zip file with symlink <span class="text-danger">ln -s ...; zip -y ... </span> <br>
+        </div>
+        <div class="ml-3 mr-3">
+            <span class="font-weight-bold">ASP.Net</span> <br>
+            <input type="checkbox"><span class="text-danger">.aspx .shtml .stm .config .ashx .asmx .aspq .axd .cshtm .cshtml .rem .soap .vbhtm .vbhtml .asa .asp .cer</span> <br>        
+        </div>
+        <div class="ml-3 mr-3">
+            <span class="font-weight-bold">bypass</span> <br>
+            <input type="checkbox">extensions<br>
+            <input type="checkbox">MIME types<br>
+            <input type="checkbox">NULL byte (%00, hexedit burp)<br>
+        </div>
     </li>
     <li>
         <h3>XXE</h3>
