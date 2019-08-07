@@ -29,6 +29,7 @@ js-files: ["web-checklist"]
                 <ul> 
                     <li> <span class="text-success">Server</span> </li> 
                     <li> <span class="text-success">X-Powered-By:</span> PHP</li>
+                    <li> <span class="text-success">X-AspNet-Version:</span> ASP.Net</li>
                     <li> <span class="text-success">x-cache, x-status, hit/miss:</span> web cache</li>
                     <li> <span class="text-success">X-Application-Context:</span> spring boot  </li>
                 </ul>
@@ -40,8 +41,8 @@ js-files: ["web-checklist"]
     </li>
     <li>
         <h3>Advanced reconnaissance</h3>
-        <input type="checkbox">dump DNS, certs <a href="https://crt.sh/" target="_blank" rel="noopener noreferrer">crt.sh</a> <br>
-        <input type="checkbox">dirb<br>
+        <input type="checkbox">dump DNS, certs <a href="https://crt.sh/" target="_blank" rel="noopener noreferrer">crt.sh</a>, <a href="https://securitytrails.com/" target="_blank" rel="noopener noreferrer">securitytrails</a> <br>
+        <input type="checkbox">Scan dir<br>
         <input type="checkbox">weak password, bruteforce<br>
         <input type="checkbox">nmap<br>
         
@@ -66,7 +67,7 @@ js-files: ["web-checklist"]
                 </div>
                 <div class="collapse" id="loose-compare">
                     <input type="checkbox"> <a href="https://www.php.net/manual/en/types.comparisons.php" target="_blank" rel="noopener noreferrer">PHP-type-comparison-tables</a> <br>
-                    <input type="checkbox"> <span class="text-danger">$_SESSION["uninitialized"] === nuLL (== ...)</span> <br>
+                    <input type="checkbox"> <span class="text-danger">$_SESSION["uninitialized"] === NULL </span> <br>
                 </div>
             </div>
 
@@ -82,10 +83,10 @@ js-files: ["web-checklist"]
                 <div class="collapse" id="advanced-inclusion">
                     <input type="checkbox">RCE <span class="text-danger">data://text/plain;base64,PD9waHAgc3lzdGVtKCRfR0VUWydjbWQnXSk7ZWNobyAnU2hlbGwgZG9uZSAhJzsgPz4=</span> <br>
                     <input type="checkbox">RCE <span class="text-danger">php://input</span> <br>
-                    <input type="checkbox">RCE <span class="text-danger">/proc/self/fd/...(brute)</span> <br>
+                    <input type="checkbox">RCE <span class="text-danger">/proc/self/fd/...(brute to get access.log or error.log)</span> <br>
                     <!-- <input type="checkbox">RCE <span class="text-danger">expect://ls</span> <br> -->
                     <input type="checkbox"><a href="https://www.rcesecurity.com/2017/08/from-lfi-to-rce-via-php-sessions/" target="_blank" rel="noopener noreferrer">via-php-sessions</a> <br>
-                    <input type="checkbox">upload zipped payload <span class="text-danger">zip://shell.jpg%23payload.php</span> <br>
+                    <input type="checkbox">upload zipped payload then use zip stream<span class="text-danger">zip://shell.jpg%23payload.php</span> <br>
                 </div>
             </div>
             <div class="ml-3 mr-3">
@@ -96,11 +97,15 @@ js-files: ["web-checklist"]
                     </a>
                 </div>
                 <div class="collapse" id="deserialize">
-                    <input type="checkbox">use S and \00 to bypass null byte filter <a href="#" target="_blank" rel="noopener noreferrer">mates2019r4-web2</a> <br>
+                    <input type="checkbox">We can declare and assign new properties in serialize data. <br>
+                    <input type="checkbox"> <span class="text-success"> PHP method names are case insensitive </span><br>
+                    <input type="checkbox"> <span class="text-success">There are additional magic methods in PHP default interfaces like ArrayAccess, ArrayIterator,Serializable: offsetGet(), offsetSet(), current() </span><br>
+                    <input type="checkbox">use S and \00 to bypass null byte filter <a href="#" target="_blank" rel="noopener noreferrer">mates2019r4-web2</a> , not necessary with <a href="https://twitter.com/0x01110129/status/1158698071120760832?s=20" target="_blank" rel="noopener noreferrer">php>=7.2</a> <br>
                     <input type="checkbox">use R to refer another property<br>
                     <input type="checkbox"> <a href="https://github.com/ambionics/phpggc" target="_blank" rel="noopener noreferrer">phpggc</a> <br>
-                    <input type="checkbox">using file function with phar wrapper  <a href="https://blog.ripstech.com/2018/new-php-exploitation-technique/" target="_blank" rel="noopener noreferrer">ripstech-New-PHP-Exploitation-Technique-Added</a> | <a href="file:///E:/Documents/infosec/us-18-Thomas-It's-A-PHP-Unserialization-Vulnerability-Jim-But-Not-As-We-Know-It.pdf" target="_blank" rel="noopener noreferrer">It’s-a-PHP-unserialization-vulnerability-Jim,
+                    <input type="checkbox">using file function with phar wrapper  <a href="https://blog.ripstech.com/2018/new-php-exploitation-technique/" target="_blank" rel="noopener noreferrer">ripstech-New-PHP-Exploitation-Technique-Added</a> , <a href="file:///E:/Documents/infosec/us-18-Thomas-It's-A-PHP-Unserialization-Vulnerability-Jim-But-Not-As-We-Know-It.pdf" target="_blank" rel="noopener noreferrer">It’s-a-PHP-unserialization-vulnerability-Jim,
                     ...</a> <br>
+                    <input type="checkbox"> Possible SSRF? <a href="https://2018.zeronights.ru/wp-content/uploads/materials/9%20ZN2018%20WV%20-%20PHP%20unserialize.pdf" target="_blank" rel="noopener noreferrer">[1]</a> <br>
                 </div>
             </div>
         </div>
@@ -123,7 +128,7 @@ js-files: ["web-checklist"]
         <div class="ml-3 mr-3">
             <span class="font-weight-bold">others</span> <br>
             <input type="checkbox">MySQL truncation<br>
-            <input type="checkbox">insert duplicate using " "<br>
+            <input type="checkbox">MySQL doesn't distinguish "lol" and "lol " -> Can insert duplicate entry<br>
         </div>
     </li>
     
@@ -152,13 +157,16 @@ js-files: ["web-checklist"]
         <input type="checkbox">redefine local dtd <a href="https://mohemiv.com/all/exploiting-xxe-with-local-dtd-files/" target="_blank" rel="noopener noreferrer">//mohemiv.com/all/exploiting-xxe-with-local-dtd-files/</a> <br>
     </li>
     <li>
+        <h3>NoSQL</h3>
+        <input type="checkbox">Check with <span class="text-danger">{"ne":1}</span> and check error with <span class="text-danger">{"$where":1}</span> <br>
+    </li>
+    <li>
         <h3>SSTI</h3>
         <input type="checkbox"> <a href="https://www.blackhat.com/docs/us-15/materials/us-15-Kettle-Server-Side-Template-Injection-RCE-For-The-Modern-Web-App-wp.pdf" target="_blank" rel="noopener noreferrer">portswigger</a>, <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection" target="_blank" rel="noopener noreferrer">payload-all-the-thing</a> <br>
         <input type="checkbox"> Flask-RCE (refer to <a href="https://github.com/epinna/tplmap/blob/master/plugins/engines/jinja2.py" target="_blank" rel="noopener noreferrer">tplmap</a> ): <a href="/archives/payloads/flask-ssti-rce.txt">payload</a> <br>
     </li>
     <li>
         <h3>More</h3>
-        <input type="checkbox">User agent: <br>
         <input type="checkbox">HTTP Verb Tampering<br>
         <input type="checkbox">xslt<br>
         <input type="checkbox">LDAP inject<br>
@@ -178,7 +186,7 @@ js-files: ["web-checklist"]
                 </a>
             </div>
             <div class="collapse" id="spring-framework">
-                <input type="checkbox">AutoBinding / Mass Assignment <a href="https://github.com/w181496/Web-CTF-Cheatsheet" target="_blank" rel="noopener noreferrer">[1]</a>, <a href="https://ctftime.org/task/7959" target="_blank" rel="noopener noreferrer">volgactf-shop</a>, <a href="https://ctftime.org/task/7975" target="_blank" rel="noopener noreferrer">volgactf-shopv2</a> <br>
+                <input type="checkbox">AutoBinding / Mass Assignment <a href="https://github.com/w181496/Web-CTF-Cheatsheet" target="_blank" rel="noopener noreferrer">Web-CTF-Cheatsheet</a>, <a href="https://ctftime.org/task/7959" target="_blank" rel="noopener noreferrer">volgactf-shop</a>, <a href="https://ctftime.org/task/7975" target="_blank" rel="noopener noreferrer">volgactf-shopv2</a> <br>
             </div>
         </div>
         <div class="ml-3 mr-3">
@@ -189,7 +197,7 @@ js-files: ["web-checklist"]
                 </a>
             </div>
             <div class="collapse" id="spring-boot">
-                <input type="checkbox">Actuator endpoints <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/404afd1d719b59c2a7600b83b5ed4583f8c822e9/Insecure%20Management%20Interface" target="_blank" rel="noopener noreferrer">swisskyrepo</a> <a href="https://www.veracode.com/blog/research/exploiting-spring-boot-actuators" target="_blank" rel="noopener noreferrer">ref0</a>
+                <input type="checkbox">Actuator endpoints <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/404afd1d719b59c2a7600b83b5ed4583f8c822e9/Insecure%20Management%20Interface" target="_blank" rel="noopener noreferrer">swisskyrepo</a> <a href="https://www.veracode.com/blog/research/exploiting-spring-boot-actuators" target="_blank" rel="noopener noreferrer">[1]</a>
             </div>
         </div>
         <div class="ml-3 mr-3">
@@ -211,12 +219,12 @@ js-files: ["web-checklist"]
                 </a>
             </div>
             <div class="collapse" id="mod-cgi">
-                <input type="checkbox">Shellshock <span class="text-danger">User-Agent: () { :;}; /bin/bash -c '...'</span> <a href="https://medium.com/@wywyit/ritsec-fall-2018-ctf-week-6-45d414035c76" target="_blank" rel="noopener noreferrer">ritsecctf-web4</a> | <a href="https://www.cvedetails.com/cve/CVE-2014-6271/" target="_blank" rel="noopener noreferrer">cve-detail</a> <br>
+                <input type="checkbox">Shellshock <span class="text-danger">User-Agent: () { :;}; /bin/bash -c '...'</span> <a href="https://medium.com/@wywyit/ritsec-fall-2018-ctf-week-6-45d414035c76" target="_blank" rel="noopener noreferrer">ritsecctf-web4</a> , <a href="https://www.cvedetails.com/cve/CVE-2014-6271/" target="_blank" rel="noopener noreferrer">cve-detail</a> <br>
             </div>
         </div>
     </li>
 </ul>
-crlf, nosql
+crlf
 <hr class="border-info">
 <h2>Client side</h2>
 <ul>
