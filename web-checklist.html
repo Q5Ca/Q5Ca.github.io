@@ -17,7 +17,7 @@ js-files: ["web-checklist"]
         <input type="checkbox">/robots.txt, /.well-known/security.txt, /sitemap.xml<br>
         <input type="checkbox">Nghịch<br>
         <input type="checkbox">cookies<br>
-        <input type="checkbox">directory indexing.<br>
+        <input type="checkbox">Directory indexing.<br>
         <div class="ml-3 mr-3">
             <div class="d-flex justify-content-between">
                 <span class="font-weight-bold">Headers</span>
@@ -25,26 +25,25 @@ js-files: ["web-checklist"]
                     More&#x25BC;
                 </a>
             </div>
-            <div class="collapse" id="headers">
+            <div class="collapse ml-3" id="headers">
                 <ul> 
                     <li> <span class="text-success">Server</span> </li> 
-                    <li> <span class="text-success">X-Powered-By</span> PHP</li>
+                    <li> <span class="text-success">X-Powered-By:</span> PHP</li>
+                    <li> <span class="text-success">X-AspNet-Version:</span> ASP.Net</li>
                     <li> <span class="text-success">x-cache, x-status, hit/miss:</span> web cache</li>
                     <li> <span class="text-success">X-Application-Context:</span> spring boot  </li>
                 </ul>
             </div>
         </div>
         <input type="checkbox">frontend: <span class="text-danger"> bottom of HTML</span>, comments, js, css, ...<br>
-        <input type="checkbox">old, bak files (backup.zip, ctf_name.zip,...), git, bzr, ...<br>
+        <input type="checkbox">old, bak files (backup.zip, ctf_name.zip,...), .git, .bzr, ...<br>
         
     </li>
     <li>
         <h3>Advanced reconnaissance</h3>
-        <input type="checkbox">dump DNS, certs <a href="https://crt.sh/" target="_blank" rel="noopener noreferrer">crt.sh</a> <br>
-        <input type="checkbox">dirb<br>
+        <input type="checkbox">dump DNS, certs <a href="https://crt.sh/" target="_blank" rel="noopener noreferrer">crt.sh</a>, <a href="https://securitytrails.com/" target="_blank" rel="noopener noreferrer">securitytrails</a> <br>
+        <input type="checkbox">Scan dir<br>
         <input type="checkbox">weak password, bruteforce<br>
-        <input type="checkbox">HTTP verb<br>
-        <input type="checkbox">User-agents<br>
         <input type="checkbox">nmap<br>
         
     </li>
@@ -55,10 +54,23 @@ js-files: ["web-checklist"]
                 More&#x25BC;
             </a>
         </div>
-        <div class="collapse" id="php">
-            <input type="checkbox">directory travel, LFI <span class="text-danger">(php://filter/read=string.rot13/resource=, pHp://FilTer/convert.base64-encode/resource= )</span> <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/File%20Inclusion#lfi--rfi-using-wrappers" target="_blank" rel="noopener noreferrer">payload-all-the-thing</a> <br>
+        <div class="collapse ml-3" id="php">
+            <input type="checkbox">directory travel, LFI <span class="text-danger">php://filter/read=string.rot13/resource=</span>, <span class="text-danger"> pHp://FilTer/convert.base64-encode/resource= </span> <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/File%20Inclusion#lfi--rfi-using-wrappers" target="_blank" rel="noopener noreferrer">payload-all-the-thing</a> <br>
             <input type="checkbox">RFI<br>
-            <input type="checkbox">Loose compare, type jungle <a href="https://www.php.net/manual/en/types.comparisons.php" target="_blank" rel="noopener noreferrer">PHP-type-comparison-tables</a> <br>
+            
+            <div class="ml-3 mr-3">
+                <div class="d-flex justify-content-between">
+                    <span class="font-weight-bold">Loose compare, type jungle</span>
+                    <a data-toggle="collapse" href="#loose-compare" role="button" aria-expanded="false" aria-controls="loose-compare">
+                        More&#x25BC;
+                    </a>
+                </div>
+                <div class="collapse ml-3" id="loose-compare">
+                    <input type="checkbox"> <a href="https://www.php.net/manual/en/types.comparisons.php" target="_blank" rel="noopener noreferrer">PHP-type-comparison-tables</a> <br>
+                    <input type="checkbox"> <span class="text-danger">$_SESSION["uninitialized"] === NULL </span> <br>
+                </div>
+            </div>
+
             <input type="checkbox">Redirecting without die()<br>
             <input type="checkbox">upload lib, use LD_PRELOAD to bypass disable_function<br>
             <div class="ml-3 mr-3">
@@ -68,13 +80,13 @@ js-files: ["web-checklist"]
                         More&#x25BC;
                     </a>
                 </div>
-                <div class="collapse" id="advanced-inclusion">
+                <div class="collapse ml-3" id="advanced-inclusion">
                     <input type="checkbox">RCE <span class="text-danger">data://text/plain;base64,PD9waHAgc3lzdGVtKCRfR0VUWydjbWQnXSk7ZWNobyAnU2hlbGwgZG9uZSAhJzsgPz4=</span> <br>
                     <input type="checkbox">RCE <span class="text-danger">php://input</span> <br>
-                    <input type="checkbox">RCE <span class="text-danger">/proc/self/fd/...(brute)</span> <br>
+                    <input type="checkbox">RCE <span class="text-danger">/proc/self/fd/...(brute to get access.log or error.log)</span> <br>
                     <!-- <input type="checkbox">RCE <span class="text-danger">expect://ls</span> <br> -->
                     <input type="checkbox"><a href="https://www.rcesecurity.com/2017/08/from-lfi-to-rce-via-php-sessions/" target="_blank" rel="noopener noreferrer">via-php-sessions</a> <br>
-                    <input type="checkbox">upload zipped payload <span class="text-danger">zip://shell.jpg%23payload.php</span> <br>
+                    <input type="checkbox">upload zipped payload then use zip stream <span class="text-danger">zip://shell.jpg%23payload.php</span> <br>
                 </div>
             </div>
             <div class="ml-3 mr-3">
@@ -84,11 +96,16 @@ js-files: ["web-checklist"]
                         More&#x25BC;
                     </a>
                 </div>
-                <div class="collapse" id="deserialize">
-                    <input type="checkbox">use S and \00 to bypass null byte filter <a href="#" target="_blank" rel="noopener noreferrer">mates2019r4-web2</a> <br>
+                <div class="collapse ml-3" id="deserialize">
+                    <input type="checkbox">We can declare and assign new properties in serialize data. <br>
+                    <input type="checkbox"> <span class="text-success"> PHP method/function names are case insensitive </span><br>
+                    <input type="checkbox"> <span class="text-success">There are additional magic methods in PHP default interfaces like ArrayAccess, ArrayIterator,Serializable: offsetGet(), offsetSet(), current() </span><br>
+                    <input type="checkbox">use S and \00 to bypass null byte filter <a href="#" target="_blank" rel="noopener noreferrer">mates2019r4-web2</a> , not necessary with <a href="https://twitter.com/0x01110129/status/1158698071120760832?s=20" target="_blank" rel="noopener noreferrer">php>=7.2</a> <br>
+                    <input type="checkbox">use R to refer another property<br>
                     <input type="checkbox"> <a href="https://github.com/ambionics/phpggc" target="_blank" rel="noopener noreferrer">phpggc</a> <br>
-                    <input type="checkbox">using file function with phar wrapper  <a href="https://blog.ripstech.com/2018/new-php-exploitation-technique/" target="_blank" rel="noopener noreferrer">ripstech-New-PHP-Exploitation-Technique-Added</a> | <a href="file:///E:/Documents/infosec/us-18-Thomas-It's-A-PHP-Unserialization-Vulnerability-Jim-But-Not-As-We-Know-It.pdf" target="_blank" rel="noopener noreferrer">It’s-a-PHP-unserialization-vulnerability-Jim,
+                    <input type="checkbox">using file function with phar wrapper  <a href="https://blog.ripstech.com/2018/new-php-exploitation-technique/" target="_blank" rel="noopener noreferrer">ripstech-New-PHP-Exploitation-Technique-Added</a> , <a href="file:///E:/Documents/infosec/us-18-Thomas-It's-A-PHP-Unserialization-Vulnerability-Jim-But-Not-As-We-Know-It.pdf" target="_blank" rel="noopener noreferrer">It’s-a-PHP-unserialization-vulnerability-Jim,
                     ...</a> <br>
+                    <input type="checkbox"> Possible SSRF with __call() <a href="https://2018.zeronights.ru/wp-content/uploads/materials/9%20ZN2018%20WV%20-%20PHP%20unserialize.pdf" target="_blank" rel="noopener noreferrer">[1]</a> <br>
                 </div>
             </div>
         </div>
@@ -97,6 +114,7 @@ js-files: ["web-checklist"]
         <h3>command inject</h3>
         <input type="checkbox">sleep 3<br>
         <input type="checkbox">%0asleep 3<br>
+        <input type="checkbox">;%0asleep 3<br>
         <input type="checkbox">dns-based <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Command%20Injection#dns-based-data-exfiltration" target="_blank" rel="noopener noreferrer">ref0</a><br>
         
     </li>
@@ -110,29 +128,63 @@ js-files: ["web-checklist"]
         <div class="ml-3 mr-3">
             <span class="font-weight-bold">others</span> <br>
             <input type="checkbox">MySQL truncation<br>
-            <input type="checkbox">insert duplicate using " "<br>
+            <input type="checkbox">MySQL doesn't distinguish "lol" and "lol " -> Can insert duplicate entry<br>
         </div>
     </li>
     
 
     <li>
         <h3>Upload files</h3>
-        <input type="checkbox">extensions<br>
-        <input type="checkbox">MIME types<br>
-        <input type="checkbox">NULL byte (%00, hexedit burp)<br>
-        <input type="checkbox">upload zip file with symlink <span class="text-danger">ln -s ...; zip -y ... </span> <br>
-
+        <div class="ml-3 mr-3">
+            <div class="d-flex justify-content-between">
+                <span class="font-weight-bold">PHP upload files</span>
+                <a data-toggle="collapse" href="#php-upload-files" role="button" aria-expanded="false" aria-controls="php-upload-files">
+                    More&#x25BC;
+                </a>
+            </div>
+            <div class="collapse ml-3" id="php-upload-files">
+                <input type="checkbox"><span class="text-danger">.php .php3 .php4 .php5 .php7 .htaccess .pht .phtm .phtml .phar .phps</span> <br>
+                <input type="checkbox">upload zip file with symlink <span class="text-danger">ln -s ../index.php abc.txt; zip -y abc.zip abc.txt </span> <br>
+                <input type="checkbox">PHP <a href="https://www.php.net/manual/en/function.exif-imagetype.php" target="_blank" rel="noopener noreferrer">exif_imagetype</a> only check first bytes (magic bytes) <br>
+            </div>
+        </div>
+        <div class="ml-3 mr-3">
+            <div class="d-flex justify-content-between">
+                <span class="font-weight-bold">ASP upload files</span>
+                <a data-toggle="collapse" href="#asp-upload-files" role="button" aria-expanded="false" aria-controls="asp-upload-files">
+                    More&#x25BC;
+                </a>
+            </div>
+            <div class="collapse ml-3" id="asp-upload-files">
+                <input type="checkbox"><span class="text-danger">.aspx .shtml .stm .config .ashx .asmx .aspq .axd .cshtm .cshtml .rem .soap .vbhtm .vbhtml .asa .asp .cer</span> <br>
+            </div>
+        </div>
+        <input type="checkbox">Upload .htaccess file <a href="https://github.com/wireghoul/htshells" target="_blank" rel="noopener noreferrer">https://github.com/wireghoul/htshells</a> <br>
+        <input type="checkbox">Upload web.config file <a href="https://soroush.secproject.com/blog/2019/08/uploading-web-config-for-fun-and-profit-2/" target="_blank" rel="noopener noreferrer">[1]</a> <br>
+        <div class="ml-3 mr-3">
+            <span class="font-weight-bold">bypass</span> <br>
+            <input type="checkbox">extensions<br>
+            <input type="checkbox">MIME types<br>
+            <input type="checkbox">NULL byte (%00, hexedit burp)<br>
+        </div>
     </li>
     <li>
         <h3>XXE</h3>
         <input type="checkbox">out of band <a href="https://medium.com/@hkln1/xxe-everywhere-923bb85b7f3f" target="_blank" rel="noopener noreferrer">ref0</a> <br>
+        <input type="checkbox">redefine local dtd <a href="https://mohemiv.com/all/exploiting-xxe-with-local-dtd-files/" target="_blank" rel="noopener noreferrer">//mohemiv.com/all/exploiting-xxe-with-local-dtd-files/</a> <br>
+    </li>
+    <li>
+        <h3>NoSQL</h3>
+        <input type="checkbox">Check with <span class="text-danger">{"ne":1}</span> and check error with <span class="text-danger">{"$where":1}</span> <br>
     </li>
     <li>
         <h3>SSTI</h3>
-        <input type="checkbox"> <a href="https://www.blackhat.com/docs/us-15/materials/us-15-Kettle-Server-Side-Template-Injection-RCE-For-The-Modern-Web-App-wp.pdf" target="_blank" rel="noopener noreferrer">portswigger</a> <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection" target="_blank" rel="noopener noreferrer">payload-all-the-thing</a> <br>
+        <input type="checkbox"> <a href="https://www.blackhat.com/docs/us-15/materials/us-15-Kettle-Server-Side-Template-Injection-RCE-For-The-Modern-Web-App-wp.pdf" target="_blank" rel="noopener noreferrer">portswigger</a>, <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection" target="_blank" rel="noopener noreferrer">payload-all-the-thing</a> <br>
+        <input type="checkbox"> Flask-RCE (refer to <a href="https://github.com/epinna/tplmap/blob/master/plugins/engines/jinja2.py" target="_blank" rel="noopener noreferrer">tplmap</a> ): <a href="/archives/payloads/flask-ssti-rce.txt">payload</a> <br>
     </li>
     <li>
         <h3>More</h3>
+        <input type="checkbox">HTTP Verb Tampering<br>
         <input type="checkbox">xslt<br>
         <input type="checkbox">LDAP inject<br>
         <input type="checkbox">XPATH inject<br>
@@ -150,8 +202,8 @@ js-files: ["web-checklist"]
                     More&#x25BC;
                 </a>
             </div>
-            <div class="collapse" id="spring-framework">
-                <input type="checkbox">AutoBinding / Mass Assignment <a href="https://github.com/w181496/Web-CTF-Cheatsheet" target="_blank" rel="noopener noreferrer">[1]</a>, <a href="https://ctftime.org/task/7959" target="_blank" rel="noopener noreferrer">volgactf-shop</a>, <a href="https://ctftime.org/task/7975" target="_blank" rel="noopener noreferrer">volgactf-shopv2</a> <br>
+            <div class="collapse ml-3" id="spring-framework">
+                <input type="checkbox">AutoBinding / Mass Assignment <a href="https://github.com/w181496/Web-CTF-Cheatsheet" target="_blank" rel="noopener noreferrer">Web-CTF-Cheatsheet</a>, <a href="https://ctftime.org/task/7959" target="_blank" rel="noopener noreferrer">volgactf-shop</a>, <a href="https://ctftime.org/task/7975" target="_blank" rel="noopener noreferrer">volgactf-shopv2</a> <br>
             </div>
         </div>
         <div class="ml-3 mr-3">
@@ -161,8 +213,8 @@ js-files: ["web-checklist"]
                     More&#x25BC;
                 </a>
             </div>
-            <div class="collapse" id="spring-boot">
-                <input type="checkbox">Actuator endpoints <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/404afd1d719b59c2a7600b83b5ed4583f8c822e9/Insecure%20Management%20Interface" target="_blank" rel="noopener noreferrer">swisskyrepo</a> <a href="https://www.veracode.com/blog/research/exploiting-spring-boot-actuators" target="_blank" rel="noopener noreferrer">ref0</a>
+            <div class="collapse ml-3" id="spring-boot">
+                <input type="checkbox">Actuator endpoints <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/404afd1d719b59c2a7600b83b5ed4583f8c822e9/Insecure%20Management%20Interface" target="_blank" rel="noopener noreferrer">swisskyrepo</a> <a href="https://www.veracode.com/blog/research/exploiting-spring-boot-actuators" target="_blank" rel="noopener noreferrer">[1]</a>
             </div>
         </div>
         <div class="ml-3 mr-3">
@@ -172,7 +224,7 @@ js-files: ["web-checklist"]
                     More&#x25BC;
                 </a>
             </div>
-            <div class="collapse" id="jolokia">
+            <div class="collapse ml-3" id="jolokia">
                 <input type="checkbox">install new jar <a href="https://ctftime.org/task/7891" target="_blank" rel="noopener noreferrer">0ctf2019-ghostpepper</a> <br>
             </div>
         </div>
@@ -183,13 +235,17 @@ js-files: ["web-checklist"]
                     More&#x25BC;
                 </a>
             </div>
-            <div class="collapse" id="mod-cgi">
-                <input type="checkbox">Shellshock <span class="text-danger">User-Agent: () { :;}; /bin/bash -c '...'</span> <a href="https://medium.com/@wywyit/ritsec-fall-2018-ctf-week-6-45d414035c76" target="_blank" rel="noopener noreferrer">ritsecctf-web4</a> | <a href="https://www.cvedetails.com/cve/CVE-2014-6271/" target="_blank" rel="noopener noreferrer">cve-detail</a> <br>
+            <div class="collapse ml-3" id="mod-cgi">
+                <input type="checkbox">Shellshock <span class="text-danger">User-Agent: () { :;}; /bin/bash -c '...'</span> <a href="https://medium.com/@wywyit/ritsec-fall-2018-ctf-week-6-45d414035c76" target="_blank" rel="noopener noreferrer">ritsecctf-web4</a> , <a href="https://www.cvedetails.com/cve/CVE-2014-6271/" target="_blank" rel="noopener noreferrer">cve-detail</a> <br>
             </div>
         </div>
     </li>
+    <li>
+        <h3>Privilege Escalation</h3>
+        <input type="checkbox"> use wildcard with <span class="text-success">chown</span> or <span class="text-success">tar</span> <a href="https://www.hackingarticles.in/exploiting-wildcard-for-privilege-escalation/" target="_blank" rel="noopener noreferrer">[1]</a> <br>
+    </li>
 </ul>
-crlf, nosql
+crlf
 <hr class="border-info">
 <h2>Client side</h2>
 <ul>
