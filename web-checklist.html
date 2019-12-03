@@ -55,7 +55,7 @@ js-files: ["web-checklist"]
             </a>
         </div>
         <div class="collapse ml-3" id="php">
-            <input type="checkbox">directory travel, LFI <span class="text-danger">php://filter/read=string.rot13/resource=</span>, <span class="text-danger"> pHp://FilTer/convert.base64-encode/resource= </span> <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/File%20Inclusion#lfi--rfi-using-wrappers" target="_blank" rel="noopener noreferrer">payload-all-the-thing</a> <br>
+            <input type="checkbox">directory travel, LFI <span class="text-danger">php://filter/read=string.rot13/resource=</span>, <span class="text-danger"> pHp://FilTer/convert.base64-encode/resource= </span>, <span class="text-danger"> php://filter/zlib.deflate/convert.base64-encode/resource= </span> <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/File%20Inclusion#lfi--rfi-using-wrappers" target="_blank" rel="noopener noreferrer">payload-all-the-thing</a> <br>
             <input type="checkbox">RFI<br>
             
             <div class="ml-3 mr-3">
@@ -190,8 +190,9 @@ js-files: ["web-checklist"]
         <input type="checkbox">XPATH inject<br>
     </li>
     <li>
-        <h3>Misc, bypass</h3>
+        <h3>Misc, logic bugs, bypass</h3>
         <input type="checkbox">\u0061 (unicode)in json<br>
+        <input type="checkbox">Host header attack reset password function <a href="https://tradahacking.vn/ho%C3%A0i-ni%E1%BB%87m-d8133ecf0dea" target="_blank" rel="noopener noreferrer">https://tradahacking.vn/ho%C3%A0i-ni%E1%BB%87m-d8133ecf0dea</a> <br>
     </li>
     <li>
         <h3>Applications/Frameworks(misused, CVEs..)</h3>
